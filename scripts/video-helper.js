@@ -317,11 +317,6 @@ function createProgressivePlaybackVideo(src, className = '', props = {}) {
   const video = createElement('video', {
     classes: className,
   });
-
-  if (props.muted) {
-    video.muted = false;
-  }
-
   if (props) {
     Object.keys(props).forEach((propName) => {
       const value = props[propName];
