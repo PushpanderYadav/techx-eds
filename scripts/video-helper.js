@@ -318,8 +318,8 @@ function createProgressivePlaybackVideo(src, className = '', props = {}) {
     classes: className,
   });
 
-  if (props.muted || props.autoplay) {
-    video.muted = true;
+  if (props.muted) {
+    video.muted = false;
   }
 
   if (props) {
