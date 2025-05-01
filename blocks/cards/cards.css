@@ -28,15 +28,15 @@
 
 /* variation for image  */
 .cards.image-resize-v1 .cards-card-image {
-  text-align: center;
+    text-align: center;
 }
 
 .cards.image-resize-v1 img {
-  width: 40px;
-  height: 40px;
+    width: 40px;
+    height: 40px;
 }
 
 /* variation for border  */
 .cards.border-radius li {
-  border-radius: 10px;
+    border-radius: 10px;
 }
