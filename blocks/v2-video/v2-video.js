@@ -82,9 +82,6 @@ export default async function decorate(block) {
   variantsClassesToBEM(block.classList, variantClasses, blockName);
 
   if (!videoLink) {
-    console.warn(
-      'Video for v2-video block is required and not provided. The block will not render!',
-    );
     block.innerHTML = '';
     return;
   }
