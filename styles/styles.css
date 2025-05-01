@@ -206,6 +206,18 @@ button {
     white-space: nowrap;
 }
 
+p.button-container a{
+    background-color: #343F52 !important;
+    border-color: #343F52 !important;
+    font-size: 1rem;
+    border-radius: unset!important;
+}
+
+p.button-container a:hover{
+    background-color: #000 !important;
+    border-color: #000 !important;
+}
+
 a.button:hover,
 a.button:focus,
 button:hover,
@@ -271,4 +283,33 @@ main .section.highlight {
     background-color: var(--light-color);
     margin: 0;
     padding: 40px 0;
+}
+
+[data-align="left"] {
+    text-align: left;
+}
+
+[data-align="right"] {
+    text-align: right;
+}
+
+[data-align="center"] {
+    text-align: center;
+}
+
+.v2-video__playback-button, .v2-video__mute-controls {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    background: transparent;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    border: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+button.v2-video__playback-button:hover,button.v2-video__playback-button:focus{
+    background: transparent;
 }
