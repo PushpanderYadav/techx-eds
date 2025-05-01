@@ -14,5 +14,5 @@ function scrollUp(block){
       });
 }
 export default async function decorate(block) {
-    scrollUp(block)
+    scrollUp(block);
 }
