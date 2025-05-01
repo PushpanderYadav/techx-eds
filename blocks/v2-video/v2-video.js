@@ -129,6 +129,9 @@ export default async function decorate(block) {
       const action = val ? 'add' : 'remove';
 
       block.classList[action](`${blockName}-full-width`);
+      if (!val) {
+        video.pause();
+      }
     });
   } else {
     block.classList.add(`${blockName}-full-width`);
