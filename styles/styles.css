@@ -297,7 +297,7 @@ main .section.highlight {
     text-align: center;
 }
 
-.v2-video__playback-button, .v2-video__mute-controls {
+.v2-video-playback-button, .v2-video-mute-controls {
     position: absolute;
     bottom: 18px;
     right: 18px;
@@ -310,6 +310,6 @@ main .section.highlight {
     z-index: 1;
 }
 
-button.v2-video__playback-button:hover,button.v2-video__playback-button:focus{
+button.v2-video-playback-button:hover,button.v2-video-playback-button:focus{
     background: transparent;
 }

@@ -1,5 +1,5 @@
-import { removeEmptyTags, variantsClassesToBEM } from '../../scripts/common.js';
-import { createVideo, cleanupVideoLink } from '../../scripts/video-helper.js';
+import { removeEmptyTags, variantsClassesToBEM } from "../../scripts/common.js";
+import { createVideo, cleanupVideoLink } from "../../scripts/video-helper.js";
 
 const onHoverOrScroll = (element, handler) => {
   let isInViewport = false;
@@ -19,16 +19,16 @@ const onHoverOrScroll = (element, handler) => {
     },
     {
       threshold: [0.4, 0.5, 0.6],
-    },
+    }
   );
   observer.observe(element);
 
-  element.addEventListener('mouseover', () => {
+  element.addEventListener("mouseover", () => {
     isMouseOver = true;
     onChange();
   });
 
-  element.addEventListener('mouseout', () => {
+  element.addEventListener("mouseout", () => {
     isMouseOver = false;
     onChange();
   });
@@ -37,22 +37,24 @@ const onHoverOrScroll = (element, handler) => {
 const extractAspectRatio = (block) => {
   const aspectRatioRegex = /aspect-ratio-(\d+)-(\d+)/;
   const classes = Array.from(block.classList);
-  const aspectRatioClass = classes.find((className) => aspectRatioRegex.test(className));
+  const aspectRatioClass = classes.find((className) =>
+    aspectRatioRegex.test(className)
+  );
 
   const match = aspectRatioClass?.match(aspectRatioRegex);
 
   return match
     ? {
-      width: parseInt(match[1], 10),
-      height: parseInt(match[2], 10),
-    }
+        width: parseInt(match[1], 10),
+        height: parseInt(match[2], 10),
+      }
     : null;
 };
 
 const retrieveVideoConfig = (block, aspectRatio) => {
-  const image = block.querySelector('img');
+  const image = block.querySelector("img");
   const poster = image
-    ? new URL(image.getAttribute('src'), window.location.href).href
+    ? new URL(image.getAttribute("src"), window.location.href).href
     : undefined;
 
   return {
@@ -60,37 +62,37 @@ const retrieveVideoConfig = (block, aspectRatio) => {
       ? { aspectRatio: `${aspectRatio.width}:${aspectRatio.height}` }
       : {}),
     ...(poster ? { poster } : {}),
-    autoplay: block.classList.contains('autoplay'),
+    autoplay: block.classList.contains("autoplay"),
     muted:
-      block.classList.contains('autoplay') || block.classList.contains('muted'),
-    loop: block.classList.contains('loop'),
-    controls: block.classList.contains('controls'),
+      block.classList.contains("autoplay") || block.classList.contains("muted"),
+    loop: block.classList.contains("loop"),
+    controls: block.classList.contains("controls"),
     disablePictureInPicture: block.classList.contains(
-      'disable-picture-in-picture',
+      "disable-picture-in-picture"
     ),
     language: document.documentElement.lang,
     playsinline: true,
   };
 };
 
-const variantClasses = ['expanding'];
+const variantClasses = ["expanding"];
 
 export default async function decorate(block) {
-  const blockName = 'v2-video';
-  const videoLink = block.querySelector('a');
+  const blockName = "v2-video";
+  const videoLink = block.querySelector("a");
 
   variantsClassesToBEM(block.classList, variantClasses, blockName);
 
   if (!videoLink) {
-    block.innerHTML = '';
+    block.innerHTML = "";
     return;
   }
 
   const aspectRatio = extractAspectRatio(block);
   if (aspectRatio) {
     block.style.setProperty(
-      '--video-aspect-ratio',
-      `${aspectRatio.width}/${aspectRatio.height}`,
+      "--video-aspect-ratio",
+      `${aspectRatio.width}/${aspectRatio.height}`
     );
   }
 
@@ -102,35 +104,37 @@ export default async function decorate(block) {
       ...config,
       fill: true,
     },
-    { usePosterAutoDetection: true },
+    { usePosterAutoDetection: true }
   );
 
   cleanupVideoLink(block, videoLink, true);
   removeEmptyTags(block, true);
 
-  const headings = block.querySelectorAll('h1, h2, h3, h4, h5, h6');
-  const ctaButtons = block.querySelectorAll('.button-container a');
-  const contentWrapper = block.querySelector(':scope > div');
-  const content = block.querySelector(':scope > div > div');
+  const headings = block.querySelectorAll("h1, h2, h3, h4, h5, h6");
+  const ctaButtons = block.querySelectorAll(".button-container a");
+  const contentWrapper = block.querySelector(":scope > div");
+  const content = block.querySelector(":scope > div > div");
 
   if (contentWrapper) {
     contentWrapper.classList.add(`${blockName}-content-wrapper`);
     content.classList.add(`${blockName}-content`);
-    [...headings].forEach((heading) => heading.classList.add(`${blockName}-heading`));
+    [...headings].forEach((heading) =>
+      heading.classList.add(`${blockName}-heading`)
+    );
     [...ctaButtons].forEach((button) => {
-      button.classList.add(`${blockName}-button`, 'dark');
+      button.classList.add(`${blockName}-button`, "dark");
     });
   }
 
   block.prepend(video);
 
-  if (block.classList.contains(`${blockName}--expanding`)) {
+  if (block.classList.contains(`${blockName}-expanding`)) {
     onHoverOrScroll(block, (val) => {
-      const action = val ? 'add' : 'remove';
+      const action = val ? "add" : "remove";
 
-      block.classList[action](`${blockName}--full-width`);
+      block.classList[action](`${blockName}-full-width`);
     });
   } else {
-    block.classList.add(`${blockName}--full-width`);
+    block.classList.add(`${blockName}-full-width`);
   }
 }
