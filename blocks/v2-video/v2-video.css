@@ -1,11 +1,6 @@
-/* Full width block */
 .section.v2-video-container {
     padding-bottom: 0;
 }
-
-/* .section+.section.v2-video-container {
-    margin-top: -40px;
-} */
 
 body .section.v2-video-container .v2-video-wrapper {
     color: #fff;
