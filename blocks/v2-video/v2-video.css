@@ -51,7 +51,7 @@ body .section.v2-video-container .v2-video-wrapper {
     object-position: center;
 }
 
-.v2-video .v2-video__video {
+.v2-video .v2-video-video {
     position: absolute;
     top: 0;
     height: 100%;
@@ -60,7 +60,7 @@ body .section.v2-video-container .v2-video-wrapper {
     width: 100%;
 }
 
-.v2-video .v2-video__content-wrapper {
+.v2-video .v2-video-content-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -69,14 +69,14 @@ body .section.v2-video-container .v2-video-wrapper {
     position: relative;
 }
 
-.v2-video .v2-video__content-wrapper::before {
+.v2-video .v2-video-content-wrapper::before {
     content: '';
     position: absolute;
     inset: 0;
     background: var(--video-overlay);
 }
 
-.v2-video .v2-video__content {
+.v2-video .v2-video-content {
     margin: 48px;
     position: relative;
     display: flex;
@@ -86,11 +86,11 @@ body .section.v2-video-container .v2-video-wrapper {
     transition: var(--video-transition);
 }
 
-.v2-video .v2-video__content * {
+.v2-video .v2-video-content * {
     margin: 0;
 }
 
-.v2-video .v2-video__heading {
+.v2-video .v2-video-heading {
     font: var(--f-heading-5-font-size) / var(--f-heading-5-line-height) var(--ff-volvo-novum-medium);
     letter-spacing: var(--f-heading-5-letter-spacing);
 }
@@ -109,7 +109,7 @@ body .section.v2-video-container .v2-video-wrapper {
         --video-overlay: linear-gradient(0deg, rgb(0 0 0 / 50%) 20%, rgb(0 0 0 / 0%) 50%);
     }
 
-    .v2-video .v2-video__content {
+    .v2-video .v2-video-content {
         margin: 64px;
         max-width: var(--text-block-max-width);
     }
@@ -125,30 +125,30 @@ body .section.v2-video-container .v2-video-wrapper {
         --video-overlay: linear-gradient(90deg, rgb(0 0 0 / 60%) 0%, rgb(0 0 0 / 0%) 50%);
     }
 
-    .v2-video .v2-video__content-wrapper {
+    .v2-video .v2-video-content-wrapper {
         max-width: 1170px;
         justify-content: center;
         align-items: flex-start;
     }
 
-    .v2-video .v2-video__content {
+    .v2-video .v2-video-content {
         margin: 120px;
         max-width: 456px;
         gap: 16px;
         text-align: left;
     }
 
-    .v2-video.v2-video--full-width .v2-video__content {
+    .v2-video.v2-video--full-width .v2-video-content {
         transform: translateX(-120px);
     }
 
-    .v2-video .v2-video__heading {
+    .v2-video .v2-video-heading {
         font-size: var(--f-heading-4-font-size);
         line-height: var(--f-heading-4-line-height);
         letter-spacing: var(--f-heading-4-letter-spacing);
     }
 
-    .v2-video .v2-video__content p {
+    .v2-video .v2-video-content p {
         font-size: 1rem;
         line-height: 130%;
         letter-spacing: 0.3rem;
