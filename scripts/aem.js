@@ -112,7 +112,9 @@ function sampleRUM(checkpoint, data) {
             script.setAttribute('crossorigin', 'anonymous');
           }
           script.src = new URL(
-            `.rum/@adobe/helix-rum-enhancer@${enhancerVersion || '^2'}/src/index.js`,
+            `.rum/@adobe/helix-rum-enhancer@${
+              enhancerVersion || '^2'
+            }/src/index.js`,
             sampleRUM.baseURL,
           ).href;
           document.head.appendChild(script);

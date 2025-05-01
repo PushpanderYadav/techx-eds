@@ -1,6 +1,6 @@
 /* header and nav layout */
 header .nav-wrapper {
-    background-color: var(--background-color);
+    background-color: #fff8ef;
     width: 100%;
     z-index: 2;
     position: fixed;
@@ -228,6 +228,7 @@ header nav .nav-sections ul > li > ul > li {
         flex: 0 1 auto;
         position: relative;
     }
+
 
     header nav .nav-sections .default-content-wrapper > ul > li > ul {
         display: none;
