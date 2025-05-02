@@ -376,7 +376,7 @@
 
 }
 
-.services-container .swiper-button-prev:after,
+/* .services-container .swiper-button-prev:after,
 .services-container .swiper-rtl .swiper-button-next:after {
     content: 'prev';
 }
@@ -384,7 +384,7 @@
 .services-container .swiper-button-next:after,
 .services-container .swiper-rtl .swiper-button-prev:after {
     content: 'next';
-}
+} */
 
 .button-container-navigation .swiper-button-next,
 .button-container-navigation .swiper-button-prev {
