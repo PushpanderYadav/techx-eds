@@ -1,0 +1,261 @@
+.block.custom-accordion {
+    --grid-col-count: 1;
+    --grid-col-show: 1;
+    --grid-rowheader-width: 35%;
+}
+
+.block.custom-accordion p {
+    line-height: 1.5;
+}
+
+.block.custom-accordion img {
+    display: block;
+    margin: 0 auto;
+    max-height: 68px;
+}
+
+.block.custom-accordion p:last-child {
+    margin-bottom: 0;
+}
+
+.block.custom-accordion .row,
+.block.custom-accordion .column-header,
+.block.custom-accordion .image-header {
+    column-gap: 1px;
+    display: grid;
+    grid-template-columns: var(--grid-rowheader-width) 1fr;
+}
+
+.block.custom-accordion .cell {
+    padding: 15px;
+    font-size: 16px;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+.block.custom-accordion .cell[role="rowheader"] {
+    font-family: var(--ff-volvo-novum-medium);
+}
+
+.block.custom-accordion .column-header {
+    display: none;
+}
+
+.block.custom-accordion .column-header .cell {
+    background-color: var(--c-grey-4);
+    color: white;
+}
+
+.block.custom-accordion .image-header .cell {
+    background-color: unset;
+    grid-column: span 2;
+}
+
+.block.custom-accordion .cell.expand,
+.block.custom-accordion .row .cell:first-child {
+    display: flex;
+}
+
+.block.custom-accordion .row:nth-child(2n-1) .cell {
+    background-color: #F2F2F2;
+}
+
+.block.custom-accordion .cell>* {
+    margin: 0;
+}
+
+.block.custom-accordion[aria-colcount="1"] .row,
+.block.custom-accordion[aria-colcount="1"] .column-header,
+.block.custom-accordion[aria-colcount="1"] .image-header {
+    grid-template-columns: 1fr;
+}
+
+/* row group and row group header */
+.block.custom-accordion [role="rowgroup"] {
+    height: 0;
+    overflow: hidden;
+    transition: height 200ms ease-out
+}
+
+.block.custom-accordion .rowgroup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: span var(--grid-col-count);
+    background: none;
+    border-radius: 0;
+    border: none;
+    border-top: solid #F2F2F2;
+    background-color: #F4F4F4;
+    padding: 15px;
+    margin: 0;
+    color: unset;
+    text-align: unset;
+    font-size: 16px;
+    white-space: normal;
+    width: 100%;
+}
+
+.block.custom-accordion .rowgroup-header p {
+    margin: 0;
+}
+
+/* .block.custom-accordion .rowgroup-header:hover {
+    background-color: var(--c-grey-1);
+} */
+
+/* .block.custom-accordion .rowgroup-header::after {
+    display: block;
+    content: '\f067';
+}
+ 
+.block.custom-accordion .rowgroup-header[aria-expanded="true"]::after {
+    content: '\f068';
+} */
+
+.block.custom-accordion .rowgroup-header::after {
+    display: block;
+    content: '';
+    /* background-image: url('/icons/black-arrow.svg');  */
+    background-image: url('/icons/faqplus.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+    /* Smooth rotation transition */
+}
+
+.block.custom-accordion .rowgroup-header[aria-expanded="true"]::after {
+    background-image: url(/icons/faqminus.svg);
+}
+
+
+/* column header mobile */
+.block.custom-accordion .column-header-mobile {
+    position: relative;
+}
+
+.block.custom-accordion .column-header-mobile select {
+    background-color: var(--c-grey-4);
+    color: white;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+    appearance: none;
+    position: relative;
+}
+
+.block.custom-accordion .column-header-mobile::after {
+    display: block;
+    background-image: url('/icons/black-arrow.svg');
+    /* Replace with the path to your icon */
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+    position: absolute;
+    font-size: 11px;
+    top: 17px;
+    right: 17px;
+}
+
+@media screen and (min-width: 481px) {
+    .block.custom-accordion {
+        --grid-rowheader-width: 25%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .block.custom-accordion {
+        --grid-rowheader-width: 18%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .block.custom-accordion {
+        --grid-rowheader-width: 115px;
+    }
+
+    .block.custom-accordion .column-header-mobile {
+        display: none;
+    }
+
+    .block.custom-accordion .row,
+    .block.custom-accordion .column-header,
+    .block.custom-accordion .image-header {
+        display: grid;
+        grid-template-columns: var(--grid-rowheader-width) repeat(calc(var(--grid-col-count) - 1), minmax(0, 1fr));
+    }
+
+    .block.custom-accordion .cell {
+        display: flex;
+    }
+
+    .block.custom-accordion .image-header .cell {
+        grid-column: span 1;
+    }
+
+    /* offset the image header by one */
+    .block.custom-accordion .image-header .cell:first-child {
+        grid-column-start: 2;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .block.custom-accordion {
+        --grid-rowheader-width: 200px;
+    }
+}
+
+/* styles for arrow accordion */
+.custom-accordion.arrow-accordion .rowgroup-header::after {
+    content: "\f107";
+    font-size: 25px;
+    transition: transform var(--duration-medium) cubic-bezier(0.45, 0, 0.125, 1);
+}
+
+.custom-accordion.arrow-accordion .rowgroup-header[aria-expanded="true"]::after {
+    content: "\f106";
+}
+
+.custom-accordion.arrow-accordion .rowgroup-header:first-child {
+    border-top: none;
+}
+
+.custom-accordion.arrow-accordion .rowgroup-header:not(:first-child) {
+    border-top: 2px;
+}
+
+.block.custom-accordion.arrow-accordion .row .cell {
+    background-color: var(--c-white);
+}
+
+.custom-accordion.arrow-accordion h3 {
+    font-size: 16px;
+}
+
+.block.custom-accordion table {
+    width: 100%;
+    /* Optional: Adjust table width */
+    border-collapse: collapse;
+    /* Ensures borders don't double up */
+}
+
+.block.custom-accordion table,
+.block.custom-accordion td,
+.block.custom-accordion th {
+    border: 1px solid black;
+    /* Sets the border */
+}
+
+.block.custom-accordion td,
+.block.custom-accordion th {
+    padding: 8px;
+    text-align: left;
+}
+
+.block.custom-accordion th {
+    background-color: #f2f2f2;
+}
