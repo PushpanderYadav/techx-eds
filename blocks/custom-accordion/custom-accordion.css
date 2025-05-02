@@ -112,7 +112,7 @@
 }
 
 .block.custom-accordion .rowgroup-header[aria-expanded="true"]::after {
-    background-image: url(/icons/faqminus.svg);
+    background-image: url('/icons/faqminus.svg');
 }
 
 
@@ -184,7 +184,7 @@
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (width >= 992px) {
     .block.custom-accordion {
         --grid-rowheader-width: 200px;
     }
