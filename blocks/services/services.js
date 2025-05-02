@@ -99,7 +99,7 @@ export default async function decorate(block) {
   if (!mainContainer.classList.contains('award-list-home-v2')) {
     // Initialize Swiper using both unique and default classes with infinite scrolling
     setTimeout(() => {
-      new Swiper(`.${uniqueId}`, {
+      const swiper = new Swiper(`.${uniqueId}`, {
         slidesPerView: 1,
         spaceBetween: 20,
         mousewheel: {
@@ -118,11 +118,11 @@ export default async function decorate(block) {
           1440: { slidesPerView: 3 },
         },
       });
-      console.error(`Swiper initialized for ${uniqueId}`);
+      console.error(`Swiper initialized for ${uniqueId}${swiper}`);
     }, 100);
   } else {
     setTimeout(() => {
-      new Swiper(`.${uniqueId}`, {
+      const swiper = new Swiper(`.${uniqueId}`, {
         slidesPerView: 1,
         spaceBetween: 20,
         mousewheel: {
@@ -141,7 +141,7 @@ export default async function decorate(block) {
           1440: { slidesPerView: 3.5 },
         },
       });
-      console.log(`Swiper initialized for ${uniqueId}`);
+      console.log(`Swiper initialized for ${uniqueId}${swiper}`);
     }, 100);
   }
   setTimeout(() => {
