@@ -8,9 +8,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    /* padding-right: 5vw; */
     margin-bottom: 10px;
-
 }
 
 .services-listing-component  .default-content-wrapper {
@@ -20,7 +18,7 @@
 .services-listing-component  .header-container h2 {
     font-weight: 500;
     line-height: 100%;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     text-transform: capitalize;
     text-align: unset;
 }
@@ -68,6 +66,7 @@
 .services-listing-component  .nav-button.prev-button {
     transform: rotate(180deg);
 }
+
 .award-list-home-v2 .nav-button {
     padding: 0.49rem .6rem;
     border: none;
