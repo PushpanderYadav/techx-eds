@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgb(0, 0, 0, 30%);
+    box-shadow: 0 2px 5px #0000004d;
     animation: breathe 2s ease-in-out infinite;
     cursor: pointer;
   }
@@ -60,34 +60,43 @@
     0% {
       box-shadow: 0 0 0 0 rgb(37, 211, 102, 50%);
     }
+
     70% {
       box-shadow: 0 0 0 15px rgb(37, 211, 102, 0%);
     }
+
     100% {
       box-shadow: 0 0 0 0 rgb(0, 0, 0, 0%);
     }
+
   }
   
   @keyframes breathetwo {
     0% {
       box-shadow: 0 0 0 0 rgb(32, 109, 122, 50%);
     }
+
     70% {
       box-shadow: 0 0 0 15px rgb(37, 211, 102, 0%);
     }
+
     100% {
       box-shadow: 0 0 0 0 rgb(0, 0, 0, 0%);
     }
+
   }
-  
+
   @keyframes beat {
     0% {
       transform: scale(1);
     }
+
     50% {
       transform: scale(0.8);
     }
+
     100% {
       transform: scale(1);
     }
+
   }
