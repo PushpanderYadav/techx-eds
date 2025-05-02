@@ -435,41 +435,41 @@
   /* swiper  */
 
   [data-slideWidth] {
-    --slideWidth: attr(data-slideWidth);
+    --slide-width: attr(data-slide-width);
 }
 
 @media(min-width:1200px) and (max-width:1439px){
     .services-listing-component  .swiper-slide {
-        max-width: calc(var(--slideWidth) - 10px)!important;
+        max-width: calc(var(--slide-width) - 10px)!important;
         width: 100%!important;
     }
    
     .award-list-home-v2 .swiper-slide {
-        max-width: calc(var(--slideWidth) - 10px)!important;
+        max-width: calc(var(--slide-width) - 10px)!important;
         width: 100%!important;
     }
 }
 
 @media(min-width:1440px) and (max-width:1599px){
     .services-listing-component  .swiper-slide {
-        max-width: calc(var(--slideWidth) - 11px)!important;
+        max-width: calc(var(--slide-width) - 11px)!important;
         width: 100%!important;
     }
    
     .award-list-home-v2 .swiper-slide {
-        max-width: calc(var(--slideWidth) - 12px)!important;
+        max-width: calc(var(--slide-width) - 12px)!important;
         width: 100%!important;
     }
 }
  
 @media(min-width:1600px){
     .services-listing-component  .swiper-slide {
-        max-width: calc(var(--slideWidth) - 25px)!important;
+        max-width: calc(var(--slide-width) - 25px)!important;
         width: 100%!important;
     }
    
     .award-list-home-v2 .swiper-slide {
-        max-width: calc(var(--slideWidth) - 28px)!important;
+        max-width: calc(var(--slide-width) - 28px)!important;
         width: 100%!important;
     }
 }

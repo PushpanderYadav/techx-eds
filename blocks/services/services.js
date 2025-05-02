@@ -150,7 +150,7 @@ export default async function decorate(block) {
     );
     allSlider.forEach((elem) => {
       const widthSlide = elem.style.width;
-      elem.style.setProperty('--slideWidth', widthSlide);
+      elem.style.setProperty('--slide-width', widthSlide);
     });
   }, 200);
 }
