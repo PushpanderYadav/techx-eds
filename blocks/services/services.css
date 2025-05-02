@@ -68,6 +68,13 @@
 .services-listing-component  .nav-button.prev-button {
     transform: rotate(180deg);
 }
+.award-list-home-v2 .nav-button {
+    padding: 0.49rem .6rem;
+    border: none;
+    background-color: #0000001a;
+    cursor: pointer;
+    border-radius: 4px;
+}
 
 .services-listing-component  .nav-button:disabled {
     opacity: 0.5;
@@ -206,7 +213,7 @@
     }
 
     .award-list-home-v2 .header-container {
-        margin: 0px auto 10px auto;
+        margin: 0px auto 10px;
     }
 
     .award-list-home-v2 .header-container a {
@@ -229,13 +236,7 @@
     }
 }
 
-.award-list-home-v2 .nav-button {
-    padding: 0.49rem .6rem;
-    border: none;
-    background-color: #0000001a;
-    cursor: pointer;
-    border-radius: 4px;
-}
+
 
 .award-list-home-v2 .nav-button.prev-button,
 .award-list-home-v2 .nav-button.next-button {
