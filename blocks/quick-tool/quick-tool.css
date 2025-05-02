@@ -26,6 +26,7 @@
     animation: beat 2s ease-in-out infinite;
     text-decoration: none;
   }
+
   .contact-phone-img-wrapper {
     position: fixed;
     bottom: 30px;
@@ -42,7 +43,7 @@
     animation: breathetwo 2s ease-in-out infinite;
     cursor: pointer;
   }
-  
+
   .contact-phone-img-wrapper .inner-div  img{
     width: 30px;
     height: 30px;
@@ -54,6 +55,7 @@
     animation: beat 2s ease-in-out infinite;
     text-decoration: none;
   }
+
   @keyframes breathe {
     0% {
       box-shadow: 0 0 0 0 rgb(37, 211, 102, 50%);
@@ -77,6 +79,7 @@
       box-shadow: 0 0 0 0 rgb(0, 0, 0, 0%);
     }
   }
+  
   @keyframes beat {
     0% {
       transform: scale(1);
