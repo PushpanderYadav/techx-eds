@@ -71,7 +71,6 @@
     grid-template-columns: 1fr;
 }
 
-/* row group and row group header */
 .block.custom-accordion [role="rowgroup"] {
     height: 0;
     overflow: hidden;
@@ -101,30 +100,15 @@
     margin: 0;
 }
 
-/* .block.custom-accordion .rowgroup-header:hover {
-    background-color: var(--c-grey-1);
-} */
-
-/* .block.custom-accordion .rowgroup-header::after {
-    display: block;
-    content: '\f067';
-}
- 
-.block.custom-accordion .rowgroup-header[aria-expanded="true"]::after {
-    content: '\f068';
-} */
-
 .block.custom-accordion .rowgroup-header::after {
     display: block;
     content: '';
-    /* background-image: url('/icons/black-arrow.svg');  */
     background-image: url('/icons/faqplus.svg');
     background-size: contain;
     background-repeat: no-repeat;
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
-    /* Smooth rotation transition */
 }
 
 .block.custom-accordion .rowgroup-header[aria-expanded="true"]::after {
@@ -132,7 +116,6 @@
 }
 
 
-/* column header mobile */
 .block.custom-accordion .column-header-mobile {
     position: relative;
 }
@@ -151,7 +134,6 @@
 .block.custom-accordion .column-header-mobile::after {
     display: block;
     background-image: url('/icons/black-arrow.svg');
-    /* Replace with the path to your icon */
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
@@ -161,19 +143,19 @@
     right: 17px;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (width >= 481px) {
     .block.custom-accordion {
         --grid-rowheader-width: 25%;
     }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (width >= 600px) {
     .block.custom-accordion {
         --grid-rowheader-width: 18%;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
     .block.custom-accordion {
         --grid-rowheader-width: 115px;
     }
@@ -197,7 +179,6 @@
         grid-column: span 1;
     }
 
-    /* offset the image header by one */
     .block.custom-accordion .image-header .cell:first-child {
         grid-column-start: 2;
     }
@@ -209,7 +190,6 @@
     }
 }
 
-/* styles for arrow accordion */
 .custom-accordion.arrow-accordion .rowgroup-header::after {
     content: "\f107";
     font-size: 25px;
@@ -238,16 +218,13 @@
 
 .block.custom-accordion table {
     width: 100%;
-    /* Optional: Adjust table width */
     border-collapse: collapse;
-    /* Ensures borders don't double up */
 }
 
 .block.custom-accordion table,
 .block.custom-accordion td,
 .block.custom-accordion th {
     border: 1px solid black;
-    /* Sets the border */
 }
 
 .block.custom-accordion td,
