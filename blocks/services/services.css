@@ -53,7 +53,7 @@
 .services-listing-component  .nav-button {
     padding: 0.5rem .6rem;
     border: none;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #0000001a;
     cursor: pointer;
     border-radius: 4px;
 }
@@ -88,6 +88,12 @@
 .services-listing-component  .nav-button:disabled img {
     filter: invert(72%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(75%) contrast(85%);
     pointer-events: none;
+}
+
+.award-list-home-v2 .nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--color-light-grey);
 }
 
 .services-listing-component  .nav-button:hover:not(:disabled) {
@@ -226,7 +232,7 @@
 .award-list-home-v2 .nav-button {
     padding: 0.49rem .6rem;
     border: none;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #0000001a;
     cursor: pointer;
     border-radius: 4px;
 }
@@ -240,12 +246,6 @@
 
 .award-list-home-v2 .nav-button.prev-button {
     transform: rotate(180deg);
-}
-
-.award-list-home-v2 .nav-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    background-color: var(--color-light-grey);
 }
 
 .award-list-home-v2 .nav-button:disabled img {
