@@ -344,15 +344,9 @@
     line-height: 100%;
 }
 
-.button-container-navigation .swiper-button-next,
-.button-container-navigation .swiper-button-prev {
-    position: unset !important;
-}
-
 .award-list-home-v2 .swiper-container {
     overflow: hidden;
 }
-
 
 .button-container-navigation .swiper-button-next.swiper-button-disabled,
 .button-container-navigation .swiper-button-prev.swiper-button-disabled {
@@ -392,7 +386,7 @@
     height: 30px !important;
     background-color: #3CB8FF;
     border-radius: 4px !important;
-
+    position: unset !important;
 }
 
 .button-container-navigation .swiper-button-next::after {
