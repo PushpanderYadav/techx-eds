@@ -75,6 +75,16 @@
     background-color: var(--color-light-grey);
 }
 
+.services-listing-component  .awards-card-image img{
+    width: 100%;
+    max-height: 147px;
+    height: 100%;
+}
+
+.award-list-home-v2 .awards-card-image img{
+    width: 100%;
+}
+
 .services-listing-component  .nav-button:disabled img {
     filter: invert(72%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(75%) contrast(85%);
     pointer-events: none;
@@ -154,7 +164,7 @@
         margin-left: 8px;
         width: 16px;
         height: 16px;
-        background-image: url(/icons/arrow-icon.svg);
+        background-image: url("/icons/arrow-icon.svg");
         background-size: contain;
         background-repeat: no-repeat;
         vertical-align: middle;
@@ -252,14 +262,21 @@
     margin: 10px 0;
 }
 
-.services-listing-component  .swiper-slide:not(:last-child) {
-    flex-shrink: 0 !important;
-    /* margin-right: 23px !important; */
+.services-container .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .award-list-home-v2 .swiper-slide {
     flex-shrink: 0 !important;
     margin-right: 20px !important;
+}
+
+.services-listing-component  .swiper-slide:not(:last-child) {
+    flex-shrink: 0 !important;
+    /* margin-right: 23px !important; */
 }
 
 .header-container .button-container-navigation {
@@ -272,14 +289,6 @@
     .header-container .button-container-navigation {
         display: none;
     }
-}
-
-
-.services-container .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .services-container .swiper-container {
@@ -354,14 +363,14 @@
     color: #d8d8d8 !important;
 }
 
-.services-container .swiper-button-prev:after,
-.services-container .swiper-rtl .swiper-button-next:after {
-    content: 'prev';
-}
-
 .services-container .swiper-button-next:after,
 .services-container .swiper-rtl .swiper-button-prev:after {
     content: 'next';
+}
+
+.services-container .swiper-button-prev:after,
+.services-container .swiper-rtl .swiper-button-next:after {
+    content: 'prev';
 }
 
 .button-container-navigation .swiper-button-next:after,
@@ -376,6 +385,8 @@
     background-color: #fff !important;
 
 }
+
+
 
 .button-container-navigation .swiper-button-next,
 .button-container-navigation .swiper-button-prev {
@@ -395,10 +406,9 @@
     width: 10px;
     position: absolute;
     top: 50%;
-    -webkit-mask: url(/icons/arrow-carousel.svg) no-repeat center !important;
     background-color: #B8B8B8;
     z-index: 9;
-    mask: url(/icons/arrow-carousel.svg) no-repeat center !important;
+    mask: url("/icons/arrow-carousel.svg") no-repeat center !important;
     transform: rotate(180deg);
 }
 
@@ -411,20 +421,9 @@
     width: 10px;
     position: absolute;
     top: 50%;
-    -webkit-mask: url(/icons/arrow-carousel.svg) no-repeat center !important;
     background-color: #B8B8B8;
     z-index: 9;
-    mask: url(/icons/arrow-carousel.svg) no-repeat center !important;
-}
-
-.award-list-home-v2 .awards-card-image img{
-    width: 100%;
-}
-
-.services-listing-component  .awards-card-image img{
-    width: 100%;
-    max-height: 147px;
-    height: 100%;
+    mask: url("/icons/arrow-carousel.svg") no-repeat center !important;
 }
 
 /* .swiper-slide {
