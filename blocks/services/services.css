@@ -307,7 +307,8 @@
     border: 1px solid var(--border-gold);
     box-sizing: border-box;
     overflow: hidden;
-    height: auto;
+    
+    /* height: auto; */
 }
 
 .awards-card-body {
