@@ -11,7 +11,7 @@
     z-index: 99999;
 }
 
-.progress-bar:before {
+.progress-bar::before {
     position: absolute;
     content: '';
     inset: 0;
