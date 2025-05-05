@@ -217,8 +217,8 @@ button {
 }
 
 p.button-container a{
-    background-color: #343F52 !important;
-    border-color: #343F52 !important;
+    background-color: #000 !important;
+    border-color: #000 !important;
     font-size: 1rem;
     border-radius: unset!important;
 }
