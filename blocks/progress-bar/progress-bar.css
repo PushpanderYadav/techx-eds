@@ -1,6 +1,7 @@
 .progress-bar-container .progress-bar-wrapper{
     max-width: 100%;
 }
+
 .progress-bar {
     position: fixed;
     top: 0;
