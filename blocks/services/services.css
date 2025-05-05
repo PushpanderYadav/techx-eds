@@ -75,8 +75,9 @@
 
 .services-listing-component  .awards-card-image img{
     width: 100%;
-    max-height: 147px;
+    max-height: 150px;
     height: 100%;
+    display: block;
 }
 
 .services-listing-component  .nav-button:disabled img {
@@ -156,6 +157,10 @@
     overflow: hidden;
 }
 
+.awards-card-image {
+    width: 100%;
+}
+
 .awards-card-body {
     text-wrap: wrap;
     padding: 0 10px;
@@ -179,7 +184,7 @@
 .awards-card-body p:not(:first-child) {
     font-weight: 300;
     font-size: 12px;
-    line-height: 100%;
+    line-height: 130%;
     color: var(--color-charcoal-black);
     margin-top: 5px;
     margin-bottom: 5px;
