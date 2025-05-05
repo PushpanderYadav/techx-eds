@@ -1,0 +1,30 @@
+.progress-bar-container .progress-bar-wrapper{
+    max-width: 100%;
+}
+.progress-bar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: #adadad;
+    height: 10px;
+    z-index: 99999;
+}
+
+.progress-bar:before {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background-color: #000;
+    animation: progress linear forwards;
+    animation-timeline: scroll();
+}
+
+@keyframes progress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
