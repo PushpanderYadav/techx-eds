@@ -1,5 +1,5 @@
 export default function decorate(block) {
-  const insideCol = block.querySelectorAll(".columns > div ");
+  const insideCol = block.querySelectorAll(".columns > div");
 
   insideCol.forEach((el) => {
     el.classList.add("col-main-container");
