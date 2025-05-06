@@ -194,6 +194,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 100%;
+    color: var(--heading-color);
 }
 
 .button-container-navigation .swiper-button-next.swiper-button-disabled,
