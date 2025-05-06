@@ -19,6 +19,7 @@
     --link-color: #3b63fb;
     --link-hover-color: #1d3ecf;
     --main-bg-color:#f1f5f9;
+    --heading-color:#00587c;
 
     /* fonts */
     --body-font-family: manrope, sans-serif;
@@ -137,6 +138,7 @@ h2 {
 
 h3 {
     font-size: var(--heading-font-size-l);
+    color:var(--heading-color);
 }
 
 h4 {
