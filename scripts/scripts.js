@@ -95,12 +95,24 @@ async function loadEager(doc) {
     // do nothing
   }
 }
+function autolinkModals(element) {
+  element.addEventListener('click', async (e) => {
+    const origin = e.target.closest('a');
+    if (origin && origin.href && origin.href.includes('modals')) {
+      e.preventDefault();
+      console.log(origin.href);
+      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      openModal(origin.href);
+    }
+  });
+}
 
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
+  autolinkModals(doc);
   const main = doc.querySelector('main');
   await loadSections(main);
 
