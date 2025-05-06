@@ -58,7 +58,7 @@
 }
 
 .block.custom-accordion .row:nth-child(2n-1) .cell {
-    background-color: #F2F2F2;
+    background-color: var(--main-bg-color);
 }
 
 .block.custom-accordion .cell>* {
@@ -85,8 +85,8 @@
     background: none;
     border-radius: 0;
     border: none;
-    border-top: solid #fff8ef;
-    background-color: #fff8ef;
+    border-top: solid var(--main-bg-color);
+    background-color: var(--main-bg-color);
     padding: 15px;
     margin: 0;
     color: unset;
