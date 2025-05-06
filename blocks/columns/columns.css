@@ -60,6 +60,10 @@
         border-spacing: 0 20px;
     }
 
+    .columns.top-left .col-main-container .right-col tr td {
+        padding: 1.5rem;
+    }
+
     .columns.top-left .col-main-container .right-col tr td:first-child {
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -70,9 +74,6 @@
         border-bottom-right-radius: 10px;
     }
 
-    .columns.top-left .col-main-container .right-col tr td {
-        padding: 1.5rem;
-    }
 
     .columns.leftsticky .left-col {
         position: sticky;
