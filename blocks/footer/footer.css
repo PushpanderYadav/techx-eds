@@ -1,5 +1,5 @@
 footer {
-    background-color: var(--light-color);
+    background-color: var(--main-bg-color);
     font-size: var(--body-font-size-xs);
 }
 
@@ -7,6 +7,17 @@ footer .footer > div {
     margin: auto;
     max-width: 1200px;
     padding: 40px 24px 24px;
+}
+
+footer .footer.block >div{
+    display: grid;
+    grid-template-columns: repeat(2,40%) auto;
+    padding: 3rem 0;
+}
+
+.footer img{
+    width:141px;
+    height: 50px;
 }
 
 footer .footer p {

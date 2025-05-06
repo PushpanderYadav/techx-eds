@@ -102,6 +102,9 @@ export default async function decorate(block) {
       const swiper = new Swiper(`.${uniqueId}`, {
         slidesPerView: 1,
         spaceBetween: 20,
+        autoplay: {
+          delay: 5000,
+        },
         mousewheel: {
           forceToAxis: true,
         },
@@ -125,6 +128,9 @@ export default async function decorate(block) {
       const swiper = new Swiper(`.${uniqueId}`, {
         slidesPerView: 1,
         spaceBetween: 20,
+        autoplay: {
+          delay: 5000,
+        },
         mousewheel: {
           forceToAxis: true,
         },
