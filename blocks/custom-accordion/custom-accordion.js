@@ -10,15 +10,24 @@ function calcScrollHeight(rowgroup) {
 
 function expand(event) {
   const button = event.target.closest('button');
+  const block = button.closest('.custom-accordion');
   const rowgroup = button.nextElementSibling;
-  if (button.ariaExpanded === 'true') {
-    rowgroup.style.height = 0;
-    rowgroup.ariaHidden = true;
-    button.ariaExpanded = false;
-  } else {
-    rowgroup.style.height = `${rowgroup.scrollHeight}px`;
-    rowgroup.ariaHidden = false;
+  const isExpanding = button.ariaExpanded === 'false';
+
+  // Collapse all other buttons/sections
+  const allButtons = block.querySelectorAll('.rowgroup-header');
+  allButtons.forEach((btn) => {
+    const rg = btn.nextElementSibling;
+    btn.ariaExpanded = false;
+    rg.ariaHidden = true;
+    rg.style.height = '0px';
+  });
+
+  // Expand current section if it was previously collapsed
+  if (isExpanding) {
     button.ariaExpanded = true;
+    rowgroup.ariaHidden = false;
+    rowgroup.style.height = `${rowgroup.scrollHeight}px`;
   }
 }
 
