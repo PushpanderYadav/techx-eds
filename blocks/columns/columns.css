@@ -79,4 +79,20 @@
         position: sticky;
         top: 8rem;
     }
+
+    .columns.about-us p{
+        margin: 0;
+        color: #60697B;
+        font-size: 16px !important;
+    }
+
+    .columns.about-us li{
+        margin: 0;
+        color: #60697B;
+        font-size: 16px !important;
+    }
+
+    .columns.about-us h4{
+        color: var(--heading-color);
+    }
 }
