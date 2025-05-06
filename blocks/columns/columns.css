@@ -42,6 +42,12 @@
         margin: 0;
     }
 
+    .columns.about-us p{
+        margin: 0;
+        color: #60697B;
+        font-size: 16px !important;
+    }
+
     .columns.top-left .col-main-container .left-col p{
         margin: 0;
         color: #60697B;
@@ -80,11 +86,6 @@
         top: 8rem;
     }
 
-    .columns.about-us p{
-        margin: 0;
-        color: #60697B;
-        font-size: 16px !important;
-    }
 
     .columns.about-us li{
         margin: 0;
