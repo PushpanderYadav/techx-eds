@@ -6,16 +6,16 @@
     position: fixed;
     top: 0;
     width: 100vw;
-    background-color: var(--main-bg-color);
     height: 10px;
     z-index: 99999;
+    background-color: var(--main-bg-color);
 }
 
 .progress-bar::before {
     position: absolute;
+    background-color: var(--heading-color);
     content: '';
     inset: 0;
-    background-color: var(--heading-color);
     animation: progress linear forwards;
     animation-timeline: scroll();
 }
