@@ -201,7 +201,7 @@
     opacity: .35;
     cursor: auto;
     pointer-events: none;
-    background-color: #B8B8B8;
+    background-color: var(--heading-color);
     color: #d8d8d8 !important;
 }
 
@@ -221,7 +221,7 @@
 .button-container-navigation .swiper-button-prev {
     width: 30px !important;
     height: 30px !important;
-    background-color: #000;
+    background-color: var(--heading-color)!important;
     border-radius: 4px !important;
     position: unset !important;
 }
