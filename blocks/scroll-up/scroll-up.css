@@ -1,6 +1,6 @@
 .scroll-up {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 40px;
     right: 2%;
     bottom: 2%;
     position: fixed;
@@ -8,5 +8,9 @@
     display: none;
     background: transparent;
     border-radius: 4px;
-    background-image: url('/icons/up.svg');
+    background-image: url('/icons/upgif.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border:1px solid black;
 }
