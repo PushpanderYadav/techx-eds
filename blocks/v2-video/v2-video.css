@@ -34,7 +34,9 @@ body .section.v2-video-container .v2-video-wrapper {
 }
 
 .v2-video-expanding {
-    clip-path: var(--video-inset);
+
+    /* clip-path: var(--video-inset); */
+    
     transition: var(--video-transition);
 }
 
