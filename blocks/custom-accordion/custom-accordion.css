@@ -103,7 +103,7 @@
 .block.custom-accordion .rowgroup-header::after {
     display: block;
     content: '';
-    background-image: url('/icons/faqplus.svg');
+    background-image: url('/icons/plus-icon.svg');
     background-size: contain;
     background-repeat: no-repeat;
     width: 20px;
@@ -112,7 +112,7 @@
 }
 
 .block.custom-accordion .rowgroup-header[aria-expanded="true"]::after {
-    background-image: url('/icons/faqminus.svg');
+    background-image: url('/icons/minus-icon.svg');
 }
 
 
