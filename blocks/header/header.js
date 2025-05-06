@@ -122,6 +122,18 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  let lastScrollTop = 0;
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      header.classList.add('hide');
+    } else {
+      header.classList.remove('hide');
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+
   // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
