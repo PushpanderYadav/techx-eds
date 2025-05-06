@@ -1,11 +1,11 @@
 export default function decorate(block) {
-  const insideCol = block.querySelectorAll('.columns > div');
+  const insideCol = block.querySelectorAll('.columns.addclass > div');
 
   insideCol.forEach((el) => {
     el.classList.add('col-main-container');
   });
 
-  const get = block.querySelectorAll('.columns > div > div');
+  const get = block.querySelectorAll('.columns.addclass > div > div');
 
   const classArray = ['left-col', 'right-col'];
   get.forEach((el, index) => {
