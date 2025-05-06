@@ -39,6 +39,13 @@
 
     /* nav height */
     --nav-height: 64px;
+    --border-gold: #EBDBBC;
+    --color-charcoal-black: #3B3B3B;
+    --color-sky: #3CB8FF;
+    --color-sky-dark: #00A2FF;
+    --color-sky-secondary:#5CB7E3;
+    --color-sky-light: #E8F4F9;
+    --color-white: #FFF;
 }
 
 /* fallback fonts */
@@ -87,6 +94,9 @@ body.appear {
 
 header {
     height: var(--nav-height);
+    position: relative;
+    z-index: 10000;
+    margin-top: 10px;
 }
 
 header .header,
@@ -208,8 +218,8 @@ button {
 }
 
 p.button-container a{
-    background-color: #343F52 !important;
-    border-color: #343F52 !important;
+    background-color: #000 !important;
+    border-color: #000 !important;
     font-size: 1rem;
     border-radius: unset!important;
 }
