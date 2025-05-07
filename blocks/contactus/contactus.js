@@ -263,6 +263,20 @@ function createContactForm(block) {
   return formContainer;
 }
 
+function showPopup(message) {
+  const thankuDiv = document.createElement('div');
+  thankuDiv.className = 'thanku-div';
+  thankuDiv.textContent = message;
+
+  const container = document.querySelector('.contactus');
+  if (container) {
+    container.prepend(thankuDiv);
+    setTimeout(() => {
+      thankuDiv.remove();
+    }, 3000);
+  }
+}
+
 // Submit button functionality after click
 async function formFunctionality(block) {
   const submitBtn = block.querySelector('#sub-btn');
@@ -275,7 +289,7 @@ async function formFunctionality(block) {
   const webURLInput = block.querySelector('#company-website');
   const parentSection = block.parentElement.parentElement;
   const dataSet = parentSection.dataset;
-  const { formsheeturl, submitpopup } = dataSet;
+  const { formsheeturl, submitpopup, apierrormessage } = dataSet;
   nameInput.addEventListener('input', (e) => {
     let value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
     value = value.replace(/\b\w/g, (char) => char.toUpperCase());
@@ -328,10 +342,8 @@ async function formFunctionality(block) {
         date: finalDate,
       };
 
-      const scriptURL = formsheeturl;
-
       try {
-        await fetch(scriptURL, {
+        const response = await fetch(formsheeturl, {
           method: 'POST',
           body: JSON.stringify(data),
           headers: {
@@ -339,6 +351,9 @@ async function formFunctionality(block) {
           },
         });
 
+        if (!response.ok) throw new Error('API response not OK');
+
+        // Clear form only on success
         nameInput.value = '';
         emailInput.value = '';
         phoneInput.value = '';
@@ -346,20 +361,16 @@ async function formFunctionality(block) {
         reasonSelect.selectedIndex = 0;
         messageTextarea.value = '';
         if (webURLInput) webURLInput.value = '';
+
+        // Show success popup
+        showPopup(submitpopup); // success message
       } catch (error) {
         console.error('Error!', error);
+
+        // Show error popup
+        showPopup(apierrormessage); // error message
       } finally {
         submitBtn.disabled = false;
-        const thankuDiv = document.createElement('div');
-        thankuDiv.className = 'thanku-div';
-        thankuDiv.textContent = submitpopup;
-        const container = document.querySelector('.contactus');
-        if (container) {
-          container.prepend(thankuDiv);
-          setTimeout(() => {
-            thankuDiv.remove();
-          }, 3000);
-        }
       }
     }
   });
