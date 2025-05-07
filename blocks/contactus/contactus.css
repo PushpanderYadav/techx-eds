@@ -1,0 +1,156 @@
+.contactus-wrapper {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.img-formdiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Image block on the left */
+.office-img {
+  flex: 1 1 40%;
+}
+
+.office-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Form block on the right */
+.contact-us-form {
+  flex: 1 1 55%;
+}
+
+.custom-contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.custom-contact-form > div {
+  flex: 1 1 48%; /* Two inputs per row */
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.custom-contact-form input,
+.custom-contact-form select,
+.custom-contact-form textarea {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.custom-contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+  flex: 1 1 100%;
+}
+
+.contact-message-parent {
+  flex: 1 1 100%; 
+}
+
+button#sub-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #00587c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#sub-btn:hover {
+  background-color: #046;
+}
+
+/* Responsive adjustments */
+@media (width <= 768px) {
+  .img-formdiv {
+    flex-direction: column;
+  }
+
+  .custom-contact-form > div {
+    flex: 1 1 100%;
+  }
+}
+
+.submit-button {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: flex-end; /* or center, or left based on preference */
+  margin-top: 1rem;
+}
+
+#sub-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #00587c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#sub-btn:hover {
+  background-color: #022638;
+}
+
+
+  .thanku-div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d4edda;
+    color: #155724;
+    padding: 20px 30px;
+    border-radius: 10px;
+    border: 1px solid #c3e6cb;
+    font-weight: bold;
+    z-index: 9999;
+    animation: popupfade 0.3s ease-out;
+  }
+
+  /* Optional: fade-in animation */
+  @keyframes popupfade {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+
+  .contact-us-form .error{
+    border: 1px solid red;
+  }
+
+  .contact-us-heading {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.contactus {
+  padding-bottom:21px;
+}
