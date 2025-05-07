@@ -62,6 +62,24 @@
     src: local("Arial");
 }
 
+@media (max-width: 899px) {
+    :root {
+        /* body sizes */
+        --body-font-size-m: 16px;
+        --body-font-size-s: 14px;
+        --body-font-size-xs: 12px;
+
+        /* heading sizes */
+        --heading-font-size-xxl: 32px;
+        --heading-font-size-xl: 28px;
+        --heading-font-size-l: 24px;
+        --heading-font-size-m: 20px;
+        --heading-font-size-s: 18px;
+        --heading-font-size-xs: 16px;
+    }
+}
+
+
 @media (width >= 900px) {
     :root {
         /* body sizes */
@@ -136,10 +154,12 @@ h2 {
     font-size: var(--heading-font-size-xl);
 }
 
+
 h3 {
     font-size: var(--heading-font-size-l);
     color:var(--heading-color);
 }
+
 
 h4 {
     font-size: var(--heading-font-size-m);
@@ -161,6 +181,13 @@ pre,
 blockquote {
     margin-top: 0.8em;
     margin-bottom: 0.25em;
+}
+
+@media(width <= 767px){
+    p {
+        font-size: 16px;
+        line-height: 1.2;
+    }
 }
 
 code,
@@ -276,6 +303,16 @@ main img {
 /* sections */
 main > .section {
     margin: 40px 0;
+}
+
+@media(width <= 767px){
+    main > .section.text-container{
+        margin:0;
+    }
+
+    main > .section.columns-container{
+        margin:0;
+    }
 }
 
 main > .section > div {
