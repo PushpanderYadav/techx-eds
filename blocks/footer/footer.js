@@ -19,4 +19,29 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   block.append(footer);
+
+  const getFooter = block.querySelectorAll('div >.section');
+  getFooter.forEach((el) => {
+    el.classList.add('mobile-accordion');
+  });
+  const getH4 = block.querySelectorAll('div > h4');
+  getH4.forEach((el) => {
+    el.classList.add('create-accordion');
+  });
+
+  const getP = block.querySelectorAll('div > h4 ~ p');
+  getP.forEach((elm) => {
+    elm.classList.add('show');
+  });
+
+  getH4.forEach((h4) => {
+    h4.addEventListener('click', () => {
+      h4.classList.toggle('focus-with-in');
+      let next = h4.nextElementSibling;
+      while (next && next.tagName.toLowerCase() === 'p') {
+        next.classList.toggle('active');
+        next = next.nextElementSibling;
+      }
+    });
+  });
 }

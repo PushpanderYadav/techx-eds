@@ -9,10 +9,50 @@ footer .footer > div {
     padding: 40px 24px 24px;
 }
 
-footer .footer.block >div{
-    display: grid;
-    grid-template-columns: repeat(2,40%) auto;
-    padding: 3rem 0;
+@media(width <=767px) {
+    footer .default-content-wrapper h4.create-accordion {
+        position: relative;
+        padding-right: 20px;
+        cursor: pointer;
+    }
+
+    footer .default-content-wrapper h4.create-accordion::after {
+        content: "▼";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+    }
+
+    footer .default-content-wrapper h4.create-accordion.focus-with-in::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    footer .mobile-accordion p.show {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+
+    footer .mobile-accordion p.show.active {
+        max-height: 100px;
+        opacity: 1;
+        margin: 8px 0;
+        padding: 4px 0;
+    }
+}
+
+
+@media(width >= 768px){
+    footer .footer.block >div{
+        display: grid;
+        grid-template-columns: repeat(2,40%) auto;
+        padding: 3rem 0;
+    }
 }
 
 .footer img{
