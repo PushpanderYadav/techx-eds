@@ -13,4 +13,11 @@
     background-repeat: no-repeat;
     background-position: center;
     border:1px solid black;
+    z-index: 1;
+}
+
+@media(width <= 767px){
+    .scroll-up {
+        bottom:20%;
+    }
 }
