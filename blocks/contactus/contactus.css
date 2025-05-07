@@ -3,7 +3,7 @@
   background-color: #f9f9f9;
 }
 
-.img-formDiv {
+.img-formdiv {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -75,12 +75,12 @@ button#sub-btn {
 }
 
 button#sub-btn:hover {
-  background-color: #004466;
+  background-color: #046;
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .img-formDiv {
+@media (width <= 768px) {
+  .img-formdiv {
     flex-direction: column;
   }
 
@@ -122,32 +122,35 @@ button#sub-btn:hover {
     padding: 20px 30px;
     border-radius: 10px;
     border: 1px solid #c3e6cb;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     font-weight: bold;
     z-index: 9999;
-    animation: popupFadeIn 0.3s ease-out;
+    animation: popupfade 0.3s ease-out;
   }
 
   /* Optional: fade-in animation */
-  @keyframes popupFadeIn {
+  @keyframes popupfade {
     from {
       opacity: 0;
       transform: translate(-50%, -60%);
     }
+
     to {
       opacity: 1;
       transform: translate(-50%, -50%);
     }
+
   }
 
   .contact-us-form .error{
     border: 1px solid red;
   }
+
   .contact-us-heading {
     text-align: center;
     padding-bottom: 10px;
     padding-top: 5px;
 }
+
 .contactus {
   padding-bottom:21px;
 }
