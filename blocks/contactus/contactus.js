@@ -5,12 +5,6 @@ function createDiv(className) {
   return div;
 }
 
-// Metadata values fetch
-function getDataAttributeValueByName(name) {
-  const element = document.querySelector(`[data-${name}]`);
-  return element ? element.getAttribute(`data-${name}`) : '';
-}
-
 // Validate Input field after input
 function fieldValidate(block, target) {
   const nameInput = block.querySelector('#contact-name');
@@ -132,11 +126,11 @@ function isValidate(block) {
 }
 
 // Helper Function to generate Select Option Field
-function optionConverter(optVal) {
+function optionConverter(optVal, reasondroplabel, reasondropplaceholder) {
   const optArr = optVal.split(',').map((opt) => opt.trim()).filter((opt) => opt);
 
   const selectLabel = document.createElement('label');
-  selectLabel.textContent = getDataAttributeValueByName('reasondroplabel');
+  selectLabel.textContent = reasondroplabel;
   selectLabel.setAttribute('for', 'contact-reason');
 
   const selectInput = document.createElement('select');
@@ -145,7 +139,7 @@ function optionConverter(optVal) {
 
   const defaultOption = document.createElement('option');
   defaultOption.value = '';
-  defaultOption.textContent = getDataAttributeValueByName('reasondropplaceholder');
+  defaultOption.textContent = reasondropplaceholder;
   defaultOption.disabled = true;
   defaultOption.selected = true;
   selectInput.appendChild(defaultOption);
@@ -163,77 +157,86 @@ function optionConverter(optVal) {
 }
 
 // Function to generate Form Fields
-function createContactForm() {
+function createContactForm(block) {
+  const parentSection = block.parentElement.parentElement;
+  const dataSet = parentSection.dataset;
+
+  const {
+    namelabel, nameplaceholder, emaillabel, emailplaceholder,
+    phonelabel, phoneplaceholder, locationlabel, locationplaceholder, weburllabel,
+    weburlplaceholder, messagelabel, messageplaceholder, submitbtnlabel,
+    reasondropvalue, reasondroplabel, reasondropplaceholder,
+  } = dataSet;
   const formContainer = createDiv('custom-contact-form');
 
   // Name
   const nameLabel = document.createElement('label');
-  nameLabel.textContent = getDataAttributeValueByName('namelabel');
+  nameLabel.textContent = namelabel;
   nameLabel.setAttribute('for', 'contact-name');
   const nameInput = document.createElement('input');
   nameInput.type = 'text';
   nameInput.id = 'contact-name';
   nameInput.name = 'name';
-  nameInput.placeholder = getDataAttributeValueByName('nameplaceholder');
+  nameInput.placeholder = nameplaceholder;
   const nameDiv = createDiv('contact-name-parent');
   nameDiv.append(nameLabel, nameInput);
 
   // Email
   const emailLabel = document.createElement('label');
-  emailLabel.textContent = getDataAttributeValueByName('emaillabel');
+  emailLabel.textContent = emaillabel;
   emailLabel.setAttribute('for', 'contact-email');
   const emailInput = document.createElement('input');
   emailInput.type = 'email';
   emailInput.id = 'contact-email';
   emailInput.name = 'email';
-  emailInput.placeholder = getDataAttributeValueByName('emailplaceholder');
+  emailInput.placeholder = emailplaceholder;
   const emailDiv = createDiv('contact-email-parent');
   emailDiv.append(emailLabel, emailInput);
 
   // Contact Number
   const phoneLabel = document.createElement('label');
-  phoneLabel.textContent = getDataAttributeValueByName('phonelabel');
+  phoneLabel.textContent = phonelabel;
   phoneLabel.setAttribute('for', 'contact-phone');
   const phoneInput = document.createElement('input');
   phoneInput.type = 'tel';
   phoneInput.id = 'contact-phone';
   phoneInput.name = 'phone';
-  phoneInput.placeholder = getDataAttributeValueByName('phoneplaceholder');
+  phoneInput.placeholder = phoneplaceholder;
   const phoneDiv = createDiv('contact-phone-parent');
   phoneDiv.append(phoneLabel, phoneInput);
 
   // Location
   const locationLabel = document.createElement('label');
-  locationLabel.textContent = getDataAttributeValueByName('locationlabel');
+  locationLabel.textContent = locationlabel;
   locationLabel.setAttribute('for', 'user-location');
   const locationInput = document.createElement('input');
   locationInput.type = 'text';
   locationInput.id = 'user-location';
   locationInput.name = 'location';
-  locationInput.placeholder = getDataAttributeValueByName('locationplaceholder');
+  locationInput.placeholder = locationplaceholder;
   const locationDiv = createDiv('user-loaction-parent');
   locationDiv.append(locationLabel, locationInput);
 
   // Company Website
   const websiteLabel = document.createElement('label');
-  websiteLabel.textContent = getDataAttributeValueByName('weburllabel');
+  websiteLabel.textContent = weburllabel;
   websiteLabel.setAttribute('for', 'company-website');
   const websiteUrl = document.createElement('input');
   websiteUrl.type = 'text';
   websiteUrl.id = 'company-website';
   websiteUrl.name = 'company';
-  websiteUrl.placeholder = getDataAttributeValueByName('weburlplaceholder');
+  websiteUrl.placeholder = weburlplaceholder;
   const websiteDiv = createDiv('company-website-parent');
   websiteDiv.append(websiteLabel, websiteUrl);
 
   // Message
   const messageLabel = document.createElement('label');
-  messageLabel.textContent = getDataAttributeValueByName('messagelabel');
+  messageLabel.textContent = messagelabel;
   messageLabel.setAttribute('for', 'contact-message');
   const messageTextarea = document.createElement('textarea');
   messageTextarea.id = 'contact-message';
   messageTextarea.name = 'message';
-  messageTextarea.placeholder = getDataAttributeValueByName('messageplaceholder');
+  messageTextarea.placeholder = messageplaceholder;
   const messageDiv = createDiv('contact-message-parent');
   messageDiv.append(messageLabel, messageTextarea);
 
@@ -241,7 +244,7 @@ function createContactForm() {
   const sendButton = document.createElement('button');
   sendButton.type = 'submit';
   sendButton.id = 'sub-btn';
-  sendButton.textContent = getDataAttributeValueByName('submitbtnlabel');
+  sendButton.textContent = submitbtnlabel;
   messageDiv.append(sendButton);
   const messBtnDiv = createDiv('message-btn');
   messBtnDiv.append(messageDiv, sendButton);
@@ -252,7 +255,7 @@ function createContactForm() {
     emailDiv,
     phoneDiv,
     locationDiv,
-    optionConverter(getDataAttributeValueByName('reasondropvalue')),
+    optionConverter(reasondropvalue, reasondroplabel, reasondropplaceholder),
     websiteDiv,
     messBtnDiv,
   );
@@ -270,7 +273,9 @@ async function formFunctionality(block) {
   const reasonSelect = block.querySelector('#contact-reason');
   const messageTextarea = block.querySelector('#contact-message');
   const webURLInput = block.querySelector('#company-website');
-
+  const parentSection = block.parentElement.parentElement;
+  const dataSet = parentSection.dataset;
+  const { formsheeturl, submitpopup } = dataSet;
   nameInput.addEventListener('input', (e) => {
     let value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
     value = value.replace(/\b\w/g, (char) => char.toUpperCase());
@@ -323,7 +328,7 @@ async function formFunctionality(block) {
         date: finalDate,
       };
 
-      const scriptURL = getDataAttributeValueByName('formsheeturl');
+      const scriptURL = formsheeturl;
 
       try {
         await fetch(scriptURL, {
@@ -347,7 +352,7 @@ async function formFunctionality(block) {
         submitBtn.disabled = false;
         const thankuDiv = document.createElement('div');
         thankuDiv.className = 'thanku-div';
-        thankuDiv.textContent = getDataAttributeValueByName('submitpopup');
+        thankuDiv.textContent = submitpopup;
         const container = document.querySelector('.contactus');
         if (container) {
           container.prepend(thankuDiv);
@@ -372,7 +377,7 @@ export default function decorate(block) {
   const officeImg = createDiv('office-img');
   officeImg.appendChild(secondDIV);
   const contactUsForm = createDiv('contact-us-form');
-  contactUsForm.appendChild(createContactForm());
+  contactUsForm.appendChild(createContactForm(block));
   const formDiv = createDiv('img-formdiv');
   formDiv.append(officeImg, contactUsForm);
   block.appendChild(formDiv);
