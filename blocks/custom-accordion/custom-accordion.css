@@ -65,6 +65,14 @@
     margin: 0;
 }
 
+@media(width <= 699px){
+    .block.custom-accordion .cell>* {
+        padding: 2px;
+        list-style-position: inside;
+        font-size: 14px;
+    }
+  }
+
 .block.custom-accordion[aria-colcount="1"] .row,
 .block.custom-accordion[aria-colcount="1"] .column-header,
 .block.custom-accordion[aria-colcount="1"] .image-header {
