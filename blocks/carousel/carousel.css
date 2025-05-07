@@ -63,6 +63,18 @@
     position: relative;
     width: var(--slide-content-width, auto);
   }
+
+  @media (width <= 899px) and (width >= 600px) {
+    .carousel .carousel-slide .carousel-slide-content {
+      margin: 32px;
+    }
+  }
+  
+  @media (width <= 599px) {
+    .carousel .carousel-slide .carousel-slide-content {
+      margin: 16px;
+    }
+  }
   
   .carousel .carousel-slide-indicators {
     display: flex;
