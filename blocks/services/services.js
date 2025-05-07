@@ -115,7 +115,7 @@ export default async function decorate(block) {
           prevEl: `.swiper-button-prev.${uniqueId}-prev`,
         },
         breakpoints: {
-          0: { slidesPerView: 1.6 },
+          0: { slidesPerView: 1.2 },
           769: { slidesPerView: 3.2 },
           1200: { slidesPerView: 3.8 },
           1440: { slidesPerView: 3 },
@@ -141,7 +141,7 @@ export default async function decorate(block) {
           prevEl: `.swiper-button-prev.${uniqueId}-prev`,
         },
         breakpoints: {
-          0: { slidesPerView: 1.6 },
+          0: { slidesPerView: 1.2 },
           769: { slidesPerView: 3.2 },
           1200: { slidesPerView: 3.2 },
           1440: { slidesPerView: 3.5 },
