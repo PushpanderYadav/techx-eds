@@ -11,13 +11,13 @@ footer .footer > div {
 
 @media(width <=767px) {
 
-    footer .default-content-wrapper h4.createAccordion {
+    footer .default-content-wrapper h4.create-accordion {
         position: relative;
         padding-right: 20px;
         cursor: pointer;
     }
 
-    footer .default-content-wrapper h4.createAccordion::after {
+    footer .default-content-wrapper h4.create-accordion::after {
         content: "▼";
         position: absolute;
         right: 0;
@@ -26,11 +26,11 @@ footer .footer > div {
         transition: transform 0.3s ease;
     }
 
-    footer .default-content-wrapper h4.createAccordion.focus-with-in::after {
+    footer .default-content-wrapper h4.create-accordion.focus-with-in::after {
         transform: translateY(-50%) rotate(180deg);
     }
 
-    footer .mobileAccordion p.show {
+    footer .mobile-accordion p.show {
         max-height: 0;
         opacity: 0;
         overflow: hidden;
@@ -39,7 +39,7 @@ footer .footer > div {
         transition: max-height 0.4s ease, opacity 0.4s ease;
     }
 
-    footer .mobileAccordion p.show.active {
+    footer .mobile-accordion p.show.active {
         max-height: 100px;
         opacity: 1;
         margin: 8px 0;

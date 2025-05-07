@@ -22,11 +22,11 @@ export default async function decorate(block) {
 
   const getFooter = block.querySelectorAll('div >.section');
   getFooter.forEach((el) => {
-    el.classList.add('mobileAccordion');
+    el.classList.add('mobile-accordion');
   });
   const getH4 = block.querySelectorAll('div > h4');
   getH4.forEach((el) => {
-    el.classList.add('createAccordion');
+    el.classList.add('create-accordion');
   });
 
   const getP = block.querySelectorAll('div > h4 ~ p');
