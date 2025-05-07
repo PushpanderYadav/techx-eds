@@ -6,6 +6,13 @@
   transform: translateX(122px);
 }
 
+@media(width <= 699px){
+  .quick-tool-container {
+    top: 5%;
+  }
+}
+
+
 .whatsapp-img-wrapper {
   display: flex;
   justify-content: start;
@@ -18,6 +25,12 @@
   box-sizing: border-box;
   transform: translateX(-30px);
   cursor: pointer;
+}
+
+@media(width <= 699px){
+  .whatsapp-img-wrapper {
+    transform: translateX(-20px);
+  }
 }
 
 .whatsapp-img-wrapper:hover {
@@ -61,6 +74,12 @@
   box-sizing: border-box;
   transform: translateX(-30px);
   cursor: pointer;
+}
+
+@media(width <= 699px){
+  .contact-phone-img-wrapper {
+    transform: translateX(-20px);
+  }
 }
 
 .contact-phone-img-wrapper:hover {
