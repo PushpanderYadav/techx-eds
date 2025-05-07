@@ -25,7 +25,6 @@ export default async function decorate(block) {
     el.classList.add('mobileAccordion');
   });
   const getH4 = block.querySelectorAll('div > h4');
-  console.log(getH4);
   getH4.forEach((el) => {
     el.classList.add('createAccordion');
   });
