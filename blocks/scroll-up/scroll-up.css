@@ -19,5 +19,6 @@
 @media(width <= 767px){
     .scroll-up {
         bottom:20%;
+        left: 2%;
     }
 }
