@@ -10,7 +10,6 @@ footer .footer > div {
 }
 
 @media(width <=767px) {
-
     footer .default-content-wrapper h4.create-accordion {
         position: relative;
         padding-right: 20px;
