@@ -62,7 +62,7 @@
     src: local("Arial");
 }
 
-@media (max-width: 899px) {
+@media (width <= 899px) {
     :root {
         /* body sizes */
         --body-font-size-m: 16px;
