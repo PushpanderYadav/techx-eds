@@ -290,7 +290,7 @@ async function formFunctionality(block) {
   const parentSection = block.parentElement.parentElement;
   const dataSet = parentSection.dataset;
   const {
-    formsheeturl, submitpopup, apierrormessage, emailrequest,
+    formsheeturl, submitpopup, apierrormessage,
   } = dataSet;
   nameInput.addEventListener('input', (e) => {
     let value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
@@ -342,7 +342,6 @@ async function formFunctionality(block) {
         reason: reasonSelect.value,
         weburl: webURLInput ? webURLInput.value.trim() : '',
         date: finalDate,
-        emailrequest,
       };
 
       try {
