@@ -1,0 +1,93 @@
+.lead-generation-form-wrapper {
+    background: #F0F6E4;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: 0px -4px 20px 0px #5B5B5B66;
+    border-top: 2px solid #8CB133
+}
+
+.lead-generation-form__container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.lead-generation-form__container .lead-generation-form__heading_container h2 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    color: #3B3B3B;
+}
+
+.lead-generation-form__content_contianer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lead-generation-form__form1_container {
+    display: flex;
+    align-items: center;
+}
+
+.lead-generation-form__form1_container .lead-generation-form__inputs {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lead-generation-form__form1_container .lead-generation-form__inputs input {
+    padding: 13px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #B8B8B8;
+    background: #FFFFFF;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: #3B3B3B;
+    outline: none;
+
+}
+
+.lead-generation-form__form1_container .lead-generation-form__checkBox_container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.lead-generation-form__checkBox_container .lead-generation-form__checkbox {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #3CB8FF;
+    background: #3CB8FF;
+    border-radius: 4px;
+    appearance: none; /* removes default checkbox styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.lead-generation-form__checkBox_container .lead-generation-form__checkbox:checked {
+    background-color: #007acc!important;
+    border-color: #007acc;
+    
+}
+
+.lead-generation-form__checkBox_container .lead-generation-form__checkbox:checked::after {
+    content: "✔";
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+        background-color: #007acc!important;
+    border-color: #007acc;
+        appearance: none; /* removes default checkbox styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
