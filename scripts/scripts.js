@@ -15,6 +15,7 @@ import {
   loadScript,
   toCamelCase,
   toClassName,
+  sampleRUM,
 } from './aem.js';
 
 const AUDIENCES = {
@@ -114,7 +115,7 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-    // Add below snippet early in the eager phase
+  // Add below snippet early in the eager phase
   if (getMetadata('experiment')
     || Object.keys(getAllMetadata('campaign')).length
     || Object.keys(getAllMetadata('audience')).length) {
@@ -157,7 +158,6 @@ function autolinkModals(element) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
-
   autolinkModals(doc);
   const main = doc.querySelector('main');
   await loadSections(main);
@@ -171,7 +171,7 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
-    // Add below snippet at the end of the lazy phase
+  // Add below snippet at the end of the lazy phase
   if ((getMetadata('experiment')
     || Object.keys(getAllMetadata('campaign')).length
     || Object.keys(getAllMetadata('audience')).length)) {
