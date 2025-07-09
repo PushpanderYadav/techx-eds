@@ -1,7 +1,7 @@
 {
   "project": "Milo",
-  "host": "milo.adobe.com",
-  "trustedHosts": ["milo.adobe.com", "*--milo--adobecom.aem.page", "*--milo--adobecom.aem.live"],
+  "host": "https://develop--techx-eds--pushpanderyadav.aem.page",
+  "trustedHosts": ["https://develop--techx-eds--pushpanderyadav.aem.page", "*--techx-eds--pushpanderyadav.aem.page", "*--techx-eds--pushpanderyadav.aem.live"],
   "plugins": [
     {
       "id": "publish",
@@ -47,7 +47,7 @@
       "id": "localize-v2",
       "title": "Localize project (V2)",
       "environments": [ "edit" ],
-      "url": "https://locui--milo--adobecom.aem.page/tools/loc",
+      "url": "https://develop--techx-eds--pushpanderyadav.aem.page/tools/loc",
       "passReferrer": true,
       "passConfig": true,
       "excludePaths": [ "/**" ],
@@ -113,7 +113,7 @@
       "id": "ost",
       "title": "Use offer",
       "environments": [ "edit", "dev", "preview" ],
-      "url": "https://milo.adobe.com/tools/ost",
+      "url": "https://develop--techx-eds--pushpanderyadav.aem.page/tools/ost",
       "includePaths": [ "**.docx**" ],
       "passConfig": true,
       "passReferrer": true
@@ -123,7 +123,7 @@
       "title": "Tag Selector",
       "id": "tag-selector",
       "environments": ["edit"],
-      "url": "https://milo.adobe.com/tools/tag-selector",
+      "url": "https://develop--techx-eds--pushpanderyadav.aem.page/tools/tag-selector",
       "isPalette": true,
       "paletteRect": "top: 150px; left: 7%; height: 675px; width: 85vw;"
     },
@@ -152,7 +152,7 @@
       "id": "caas-configurator",
       "title": "CaaS Configurator",
       "environments": [ "edit", "preview", "dev" ],
-      "url": "https://milo.adobe.com/tools/caas",
+      "url": "https://develop--techx-eds--pushpanderyadav.aem.page/tools/caas",
       "isPalette": false,
       "includePaths": [ "**.docx**"]
     },
@@ -161,7 +161,7 @@
       "id": "faas-configurator",
       "title": "FaaS Configurator",
       "environments": [ "edit", "preview", "dev" ],
-      "url": "https://milo.adobe.com/tools/faas",
+      "url": "https://develop--techx-eds--pushpanderyadav.aem.page/tools/faas",
       "isPalette": false,
       "includePaths": [ "**.docx**"]
     },
