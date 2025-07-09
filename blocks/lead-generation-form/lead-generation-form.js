@@ -43,13 +43,13 @@ function addValidationLogic(nameInput, numberInput, checkBox, optButton, block) 
 
         // Set number as placeholder in step 2
         otpNumberInput.placeholder = `+ ${numberInput.value}`;
-        nextStep.style.display = 'block';
+        nextStep.style.display = 'flex';
         firstStep.style.display = 'none';
 
         // Add edit button functionality here
         const editBtn = nextStep.querySelector(`.${blockName}__edit_number`);
         editBtn.addEventListener("click", () => {
-            firstStep.style.display = 'block';
+            firstStep.style.display = 'flex';
             nextStep.style.display = 'none';
             setTimeout(() => {
                 numberInput.focus();
@@ -93,13 +93,37 @@ function stepFirstFormInput(stepFirstFormContainer, block) {
     addValidationLogic(nameInput, numberInput, checkBox, optButton, block);
 }
 
+function showThnakYouPage(block){
+    const thankCaption = createElement('div',`${blockName}__thankyou_container`);
+    const thnakContent = createElement('p',`${blockName}__thankyou_label`);
+    thnakContent.textContent='ThankYou to show the interest..!';
+    thankCaption.append(thnakContent);
+
+    const closeThank = createElement('div',`${blockName}__thank_close_container`);
+    const thankIcon = createElement('span',`${blockName}__thankyou_close_icon`);
+    thankIcon.textContent ='X';
+    closeThank.append(thankIcon);
+    block.append(thankCaption,closeThank);
+
+    thankIcon.addEventListener('click',()=>{
+        const updatedData = {
+          value: true,
+          timestamp: new Date().toISOString(),
+        };
+        localStorage.setItem('leadFill', JSON.stringify(updatedData));
+        sessionStorage.removeItem("showLeadBlock");
+        block.classList.add('hideLead');
+        block.classList.remove('showLeadBlock');
+    })
+}
+
 function addValidationLogicSec(otpInput, checkBox, submitButton, block) {
     function validateStep2Form() {
         const isOtpValid = /^\d{4}$/.test(otpInput.value.trim());
         const isChecked = checkBox.checked;
         submitButton.disabled = !(isOtpValid && isChecked);
     }
-    otpInput.addEventListener('input', () => {
+    otpInput.addEventListener('input', (e) => {
         otpInput.value = otpInput.value.replace(/[^0-9]/g, '').slice(0, 4);
         validateStep2Form();
     });
@@ -107,7 +131,8 @@ function addValidationLogicSec(otpInput, checkBox, submitButton, block) {
     submitButton.disabled = true;
     submitButton.addEventListener("click", (e) => {
         e.preventDefault();
-        alert("Application Submitted!");
+        block.innerHTML='';
+        showThnakYouPage(block)
     });
 
 }
@@ -142,8 +167,8 @@ function stepSecFormInput(stepSecFormContiner, block) {
     checkBoxContaier.append(checkBox, description);
 
 
-    const otpButtonContainer = createElement('div', `${blockName}__btn_otp_container`);
-    const submitButton = createElement('button', `${blockName}__otp_button`);
+    const otpButtonContainer = createElement('div', `${blockName}__btn_submit_container`);
+    const submitButton = createElement('button', `${blockName}__submit_button`);
     submitButton.textContent = 'Submit Application';
     otpButtonContainer.append(submitButton);
 
@@ -151,9 +176,30 @@ function stepSecFormInput(stepSecFormContiner, block) {
     addValidationLogicSec(otpInput, checkBox, submitButton, block)
 }
 
+function trackScrollDepth(block) {
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+        if (scrollPercentage > 50) {
+            const isCheckOut = sessionStorage.getItem("leadChekout");
+            const isFilled= localStorage.getItem('leadFill');
+            if (!isCheckOut && !isFilled) {
+                sessionStorage.setItem("showLeadBlock", true);
+                if (!block.classList.contains('showLeadBlock')) {
+                    block.classList.add("showLeadBlock");
+                }
+            }
+        }
+
+    });
+}
+
 function createFormContainerStructure(block, wrapperDiv) {
     const formContianer = createElement('div', `${blockName}__content_contianer`);
-    wrapperDiv.append(formContianer);
+    // wrapperDiv.append(formContianer);
 
     const stepFirstFormContainer = createElement('div', `${blockName}__form1_container`);
     const stepSecFormContiner = createElement('div', `${blockName}__form2_container`);
@@ -161,22 +207,52 @@ function createFormContainerStructure(block, wrapperDiv) {
     //initally stepSecFormContiner will be display none
     stepSecFormContiner.style.display = 'none';
     const closeIconDiv = createElement('div', `${blockName}__close_icon_container`);
-    const closeIcon =   createElement('span',`${blockName}__close_icon`);
-    closeIcon.textContent ='X';
+    const closeIcon = createElement('span', `${blockName}__close_icon`);
+    closeIcon.textContent = 'X';
     closeIconDiv.append(closeIcon);
+    wrapperDiv.append(formContianer);
+    block.append(closeIconDiv)
 
-
-    formContianer.append(stepFirstFormContainer, stepSecFormContiner, closeIconDiv);
+    formContianer.append(stepFirstFormContainer, stepSecFormContiner);
 
     stepFirstFormInput(stepFirstFormContainer, block);
     stepSecFormInput(stepSecFormContiner, block);
+    closeIcon.addEventListener('click', () => {
+        block.style.display = 'none';
+        sessionStorage.removeItem("showLeadBlock");
+        sessionStorage.setItem("leadChekout", true);
+        if (block.classList.contains("showLeadBlock")) {
+            block.classList.remove("showLeadBlock");
+        }
+    })
+    trackScrollDepth(block);
+    const getItem = sessionStorage.getItem("showLeadBlock");
+    if (getItem) {
+        block.classList.add("showLeadBlock");
+    }
+}
+
+function checkLeadSurveyCondition(block){
+ const storedData = localStorage.getItem('leadFill');
+      if (storedData) {
+    const currentDate = new Date();
+    const { value, timestamp } = JSON.parse(storedData);
+    const storedDate = timestamp ? new Date(timestamp) : null;
+
+    // Check if timestamp exists and is older than 1 Minute
+    if (!storedDate || (currentDate - storedDate) / (1000 * 60) > 1) {
+      localStorage.removeItem('leadFill');
+    //   block.classList.add('showLeadBlock');
+      block.classList.remove('hideLead');
+    }
+}
 }
 
 export default function decorate(block) {
     const wrapperDiv = block.querySelector(':scope>div');
     wrapperDiv.classList.add(`${blockName}__container`)
-
     const headingContainer = wrapperDiv.querySelector(':scope>div');
     headingContainer.classList.add(`${blockName}__heading_container`);
     createFormContainerStructure(block, wrapperDiv);
+    checkLeadSurveyCondition(block)
 }
