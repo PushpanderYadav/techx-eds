@@ -1,0 +1,132 @@
+.cibilScore__outer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cibilScore__frame {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: conic-gradient(from 225deg,
+    red 0deg 125.55deg,
+    white 125.55deg 127.55deg,
+
+    #ee993f 127.55deg 166.05deg,
+    white 166.05deg 168.05deg,
+
+    #f3cc5a 168.05deg 202.05deg,
+    white 202.05deg 204.05deg,
+
+    #60b263 204.05deg 224.55deg,
+    white 224.55deg 226.55deg,
+
+    green 226.55deg 270deg,
+    white 270deg 360deg
+  );
+  border: 20px solid white;
+}
+
+.cibilScore__scale-wrapper {
+  background: #fff;
+  border-radius: 50%;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cibilScore__meter-wrapper {
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  background: conic-gradient(from 225deg,
+    #FFC8C8 0deg,
+    #FFC29A 118deg,
+    #FBE298 153deg,
+    #DDFF98 210deg,
+    #A5FFBC 270deg,
+    transparent 270deg,
+    transparent 360deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cibilScore__meter {
+  position: relative;
+  width: 230px;
+  height: 230px;
+  margin: auto;
+}
+
+.cibilScore__needle-rotator {
+  position: relative;
+  width: 230px;
+  height: 230px;
+  transform-origin: 50% 50%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.cibilScore__arc {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6.3px 12.6px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.cibilScore__needle {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid black;
+  z-index: 2;
+}
+
+.cibilScore__center-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 6px solid #000;
+  background: #fff;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.cibilScore__range-values {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.cibilScore__min-label,
+.cibilScore__max-label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.cibilScore__input-box input {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+}

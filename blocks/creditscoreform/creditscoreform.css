@@ -1,0 +1,12 @@
+.creditScoreForm__form{
+    max-width: 600px;
+    margin:auto;
+}
+.creditScoreForm__field {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.creditScoreForm__row{
+    display: flex;
+}
