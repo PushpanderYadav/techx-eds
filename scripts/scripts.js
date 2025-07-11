@@ -16,7 +16,7 @@ import {
   toCamelCase,
   toClassName,
   sampleRUM,
-} from './aem.js';
+} from "./aem.js";
 
 const AUDIENCES = {
   mobile: () => window.innerWidth < 600,
@@ -29,14 +29,19 @@ const AUDIENCES = {
  * @returns an array of HTMLElement nodes that match the given scope
  */
 export function getAllMetadata(scope) {
-  return [...document.head.querySelectorAll(`meta[property^="${scope}:"],meta[name^="${scope}-"]`)]
-    .reduce((res, meta) => {
-      const id = toClassName(meta.name
+  return [
+    ...document.head.querySelectorAll(
+      `meta[property^="${scope}:"],meta[name^="${scope}-"]`
+    ),
+  ].reduce((res, meta) => {
+    const id = toClassName(
+      meta.name
         ? meta.name.substring(scope.length + 1)
-        : meta.getAttribute('property').split(':')[1]);
-      res[id] = meta.getAttribute('content');
-      return res;
-    }, {});
+        : meta.getAttribute("property").split(":")[1]
+    );
+    res[id] = meta.getAttribute("content");
+    return res;
+  }, {});
 }
 
 // Define an execution context
@@ -55,17 +60,17 @@ const pluginContext = {
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
-  const h1 = main.querySelector('h1');
-  const picture = main.querySelector('picture');
+  const h1 = main.querySelector("h1");
+  const picture = main.querySelector("picture");
   // eslint-disable-next-line no-bitwise
   if (
-    h1
-    && picture
-    && h1.compareDocumentPosition(picture)
-    && Node.DOCUMENT_POSITION_PRECEDING
+    h1 &&
+    picture &&
+    h1.compareDocumentPosition(picture) &&
+    Node.DOCUMENT_POSITION_PRECEDING
   ) {
-    const section = document.createElement('div');
-    section.append(buildBlock('hero', { elems: [picture, h1] }));
+    const section = document.createElement("div");
+    section.append(buildBlock("hero", { elems: [picture, h1] }));
     main.prepend(section);
   }
 }
@@ -76,7 +81,8 @@ function buildHeroBlock(main) {
 async function loadFonts() {
   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
   try {
-    if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
+    if (!window.location.hostname.includes("localhost"))
+      sessionStorage.setItem("fonts-loaded", "true");
   } catch (e) {
     // do nothing
   }
@@ -91,7 +97,7 @@ function buildAutoBlocks(main) {
     buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error('Auto Blocking failed', error);
+    console.error("Auto Blocking failed", error);
   }
 }
 
@@ -115,25 +121,29 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   // Add below snippet early in the eager phase
-  if (getMetadata('experiment')
-    || Object.keys(getAllMetadata('campaign')).length
-    || Object.keys(getAllMetadata('audience')).length) {
+  if (
+    getMetadata("experiment") ||
+    Object.keys(getAllMetadata("campaign")).length ||
+    Object.keys(getAllMetadata("audience")).length
+  ) {
     // eslint-disable-next-line import/no-relative-packages
-    const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js');
+    const { loadEager: runEager } = await import(
+      "../plugins/experimentation/src/index.js"
+    );
     await runEager(document, { audiences: AUDIENCES }, pluginContext);
   }
-  document.documentElement.lang = 'en';
+  document.documentElement.lang = "en";
   decorateTemplateAndTheme();
-  const main = doc.querySelector('main');
+  const main = doc.querySelector("main");
   if (main) {
     decorateMain(main);
-    document.body.classList.add('appear');
-    await loadSection(main.querySelector('.section'), waitForFirstImage);
+    document.body.classList.add("appear");
+    await loadSection(main.querySelector(".section"), waitForFirstImage);
   }
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
-    if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
+    if (window.innerWidth >= 900 || sessionStorage.getItem("fonts-loaded")) {
       loadFonts();
     }
   } catch (e) {
@@ -141,12 +151,14 @@ async function loadEager(doc) {
   }
 }
 function autolinkModals(element) {
-  element.addEventListener('click', async (e) => {
-    const origin = e.target.closest('a');
-    if (origin && origin.href && origin.href.includes('modals')) {
+  element.addEventListener("click", async (e) => {
+    const origin = e.target.closest("a");
+    if (origin && origin.href && origin.href.includes("modals")) {
       e.preventDefault();
       console.log(origin.href);
-      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      const { openModal } = await import(
+        `${window.hlx.codeBasePath}/blocks/modal/modal.js`
+      );
       openModal(origin.href);
     }
   });
@@ -158,26 +170,33 @@ function autolinkModals(element) {
  */
 async function loadLazy(doc) {
   autolinkModals(doc);
-  const main = doc.querySelector('main');
+  const main = doc.querySelector("main");
   await loadSections(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
 
-  loadHeader(doc.querySelector('header'));
-  loadFooter(doc.querySelector('footer'));
+  loadHeader(doc.querySelector("header"));
+  loadFooter(doc.querySelector("footer"));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
   // Add below snippet at the end of the lazy phase
-  if ((getMetadata('experiment')
-    || Object.keys(getAllMetadata('campaign')).length
-    || Object.keys(getAllMetadata('audience')).length)) {
+  if (
+    getMetadata("experiment") ||
+    Object.keys(getAllMetadata("campaign")).length ||
+    Object.keys(getAllMetadata("audience")).length
+  ) {
     // eslint-disable-next-line import/no-relative-packages
-    const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js');
+    const { loadLazy: runLazy } = await import(
+      "../plugins/experimentation/src/index.js"
+    );
     await runLazy(document, { audiences: AUDIENCES }, pluginContext);
   }
+  sampleRUM("lazy");
+  sampleRUM.observe(main.querySelectorAll("div[data-block-name]"));
+  sampleRUM.observe(main.querySelectorAll("picture > img"));
 }
 
 /**
@@ -186,7 +205,7 @@ async function loadLazy(doc) {
  */
 function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
-  window.setTimeout(() => import('./delayed.js'), 3000);
+  window.setTimeout(() => import("./delayed.js"), 3000);
   // load anything that can be postponed to the latest here
 }
 
