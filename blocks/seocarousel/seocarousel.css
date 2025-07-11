@@ -1,0 +1,231 @@
+.swiper-wrapper.seo-carousel__items {
+  padding: 0;
+}
+
+.seocarousel.block{
+  padding: 2rem;
+  border: 1px solid #B8B8B8;
+  margin-top:2rem;
+  border-radius: 0.625rem;
+  width:55%;
+}
+
+.seocarousel.block .seo-carousel__heading-wrapper h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+  margin:0;
+  color: #3b3b3b;
+}
+
+.seocarousel.block .seo-carousel__heading-wrapper p {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #3b3b3b;
+}
+
+.seo-carousel__bg_picture {
+  border-radius: 0.625rem;
+  max-width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 22.375rem;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.seo-carousel__content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 80%);
+  border-radius: 8px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+
+.seo-carousel__buttons {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.2rem;
+  display: flex;
+  gap: 2rem;
+  z-index: 2;
+}
+
+.swiper-button-prev.seo-btn-prv,
+.swiper-button-next.seo-btn-nxt {
+  position: relative;
+  bottom: 0.9375rem;
+  z-index: 2;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+
+.seo-carousel__buttons .swiper-button-prev::before,
+.seo-carousel__buttons .swiper-button-next::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  mask-image: url('/icons/seo-icon.svg');
+  -webkit-mask-image: url('/icons/seo-icon.svg');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  background-color: #B8B8B8;
+  transition: background-color 0.3s ease;
+}
+
+.seo-carousel__buttons .swiper-button-next::before {
+  transform: rotate(180deg);
+}
+
+.seo-carousel__buttons .swiper-button-prev:hover::before,
+.seo-carousel__buttons .swiper-button-next:hover::before {
+  background-color: #3CB8FF;
+}
+
+.seo-carousel__buttons .swiper-button-prev:hover,
+.seo-carousel__buttons .swiper-button-next:hover {
+  border-color: #B8B8B8;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+/* Base styles for .seo-carousel__content */
+.seo-carousel__content {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* For screens up to 767px (mobile) */
+@media (max-width: 47.9375rem) {
+  .seo-carousel__content {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .seo-carousel__content h2 {
+    font-size: 1.25rem;
+  }
+
+  .seo-carousel__content ul {
+    padding-left: 1.2rem;
+  }
+
+  .seo-carousel__content .button-container a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* For screens between 768px and 1199px (tablet) */
+@media (min-width: 48rem) and (max-width: 74.9375rem) {
+  .seo-carousel__content {
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
+  .seo-carousel__content h2 {
+    font-size: 1.5rem;
+  }
+
+  .seo-carousel__content ul {
+    padding-left: 1.5rem;
+  }
+
+  .seo-carousel__content .button-container a {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* For screens between 1200px and 1439px (small desktop) */
+@media (min-width: 75rem) and (max-width: 89.9375rem) {
+  .seo-carousel__content {
+    padding: 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  .seo-carousel__content h2 {
+    font-size: 1.75rem;
+  }
+
+  .seo-carousel__content ul {
+    padding-left: 2rem;
+  }
+
+  .seo-carousel__content .button-container a {
+    padding: 0.85rem 2rem;
+  }
+}
+
+/* For screens 1440px and above (large desktop) */
+@media (min-width: 90rem) {
+  .seo-carousel__content {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 100%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+  }
+
+  .seo-carousel__content h2 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 100%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+  }
+
+  .seo-carousel__content ul {
+    padding-left: 2.5rem;
+    margin: 0.625rem 0;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+  }
+
+  .seo-carousel__content .button-container a.button:any-link {
+    padding: .8rem 2rem;
+    margin: 0;
+    background-color: #3CB8FF!important;
+    border:none;
+    border-radius: 2px!important;
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-sizing: border-box;
+  }
+
+    .seo-carousel__content .button-container a.button:any-link:hover{
+      background-color: #00a2ff!important;
+    }
+}

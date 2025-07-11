@@ -1,0 +1,101 @@
+.lead-generation-steps.block {
+    display: grid;
+    grid-template-columns: 40% auto;
+    grid-template-rows: 488px;
+    overflow: hidden;
+}
+
+.lead-generation-container-li li.active {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    color: #8CB133;
+}
+
+.circle-steps {
+    --size: 900px;
+    --stroke: 4px;
+    --radius: calc((var(--size)/2) - (var(--stroke)/2));
+    --start-angle: -130deg;
+    --gap-angle: -20deg;
+
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+}
+
+.circle-steps::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    box-sizing: border-box;
+    border: var(--stroke) solid #8CB133;
+    border-radius: 50%;
+    background: #F0F6E4;
+    width: 100%;
+    height: 100%;
+   background-image:
+    url('/icons/bigimg.png'),
+    url('/icons/smallimg.png');
+  background-repeat: no-repeat, no-repeat;
+  /* background-size: 100px 100px, 100px 100px; */
+  background-position:
+      calc(50% - 100px) calc(50% - 100px),
+    calc(50% + 10px) calc(50% - 150px);
+  background-color: #F0F6E4;
+}
+
+.step {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: all 0.3s ease;
+}
+
+.lead-generation-container-li li {
+    transition: all 0.3s ease;
+}
+
+.step.active {
+    width: 100px;
+    height: 100px;
+    margin: -50px;
+    border: 2px solid #8CB133;
+    color: #8CB133;
+    font-size: 16px;
+}
+
+.step.inactive {
+    width: 60px;
+    height: 60px;
+    margin: -30px;
+    border: 2px dotted #ccc;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.step--1 {
+    --angle: var(--start-angle);
+}
+
+.step--2 {
+    --angle: calc(var(--start-angle) + var(--gap-angle));
+}
+
+.step--3 {
+    --angle: calc(var(--start-angle) + 2 * var(--gap-angle));
+}
+
+.step {
+    transform:
+        rotate(var(--angle)) translateX(var(--radius)) rotate(calc(-1 * var(--angle)));
+}

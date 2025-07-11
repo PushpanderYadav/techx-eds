@@ -1,0 +1,235 @@
+/* Container top margin */
+.section.customer-support-container {
+  margin-top: 20px !important;
+}
+
+/* Grid wrapper: two auto rows, four equal columns */
+.customer-support-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 140px;
+  gap: 20px;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 1) Single-column blocks */
+/* ──────────────────────────────────────────────────── */
+.grid-row-col-1 {
+  box-shadow: 2px 2px 8px 0px #0000001A;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.grid-row-col-1 p {
+  margin: 0;
+  font-family: Work Sans;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.grid-row-col-1 img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 2) Two-column blocks (grid-row-col-2) */
+/* ──────────────────────────────────────────────────── */
+.customer-support.block.grid-row-col-2 p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #fff;
+}
+.customer-support.block.grid-row-col-2 img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+.customerSupport__bg-wrapper {
+  padding: 40px;
+  box-sizing: border-box;
+  background-size: cover;
+  border-radius: 4px;
+}
+.customerSupport__flexBox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 3) Spanning two columns on second row (grid-row-2) */
+/* ──────────────────────────────────────────────────── */
+
+.grid-row-2 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    border-radius: 4px;
+}
+.customer-support.grid-row-2.block {
+  /* height: 140px; */
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 8px 0px #0000001A;
+}
+.grid-row-2 p {
+  margin: 0;
+}
+.grid-row-2 .customerSupport__flexBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid-row-2 .customerSupport__flexBox div + div > picture img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.grid-row-2 .customerSupport__flexBox p {
+  font-family: Work Sans;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 4) Three-column blocks (grid-row-col-3) */
+/* ──────────────────────────────────────────────────── */
+.grid-row-col-3 {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  box-shadow: 2px 2px 8px 0px #0000001A;
+  padding: 40px;
+  box-sizing: border-box;
+}
+.grid-row-col-3 p {
+  margin: 0;
+  font-family: Work Sans;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.grid-row-col-3 img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 5) Three-col block on second row (grid-row-2-col-3) */
+/* ──────────────────────────────────────────────────── */
+.grid-row-2-col-3 {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* max-height: 140px; */
+}
+.grid-row-2-col-3 p {
+  margin: 0;
+}
+.grid-row-2-col-3 .customerSupport__flexBox {
+  background: #F4F4F4;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+.grid-row-2-col-3 .customerSupport__flexBox p {
+  display: flex;
+  align-items: center;
+  font-family: Work Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.grid-row-2-col-3 .customerSupport__flexBox img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 6) Four-column blocks (grid-row-col-4) */
+/* ──────────────────────────────────────────────────── */
+.grid-row-col-4 {
+  grid-column-start: 4;
+  grid-row-start: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+.grid-row-col-4 p {
+  margin: 0;
+}
+.grid-row-col-4 .customerSupport__flexBox {
+  background: #F4F4F4;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid-row-col-4 .customerSupport__flexBox p {
+  display: flex;
+  align-items: center;
+  font-family: Work Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.grid-row-col-4 .customerSupport__notFlexBox {
+  box-shadow: 2px 2px 8px 0px #0000001A;
+  background-color: #F4F4F4;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding: 20px;
+}
+.grid-row-col-4 img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 7) Four-col block on second row (grid-row-2-col-4) */
+/* ──────────────────────────────────────────────────── */
+.grid-row-2-col-4 {
+  grid-column-start: 4;
+  /* max-height: 140px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.grid-row-2-col-4 .customerSupport__flexBox {
+  background: #F4F4F4;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+.grid-row-2-col-4 .customerSupport__flexBox p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-family: Work Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.grid-row-2-col-4 .customerSupport__flexBox img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}

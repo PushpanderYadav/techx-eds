@@ -1,0 +1,17 @@
+.homeloancalculator.block{
+    padding: 2rem;
+    border: 1px solid #B8B8B8;
+    margin-top: 2rem;
+    border-radius: 0.625rem;
+    width:45%;
+}
+
+.home-loan__calculator__header,
+.home-loan__calculator__minmax{
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-loan__calculator__range{
+    width: 100%;
+}
