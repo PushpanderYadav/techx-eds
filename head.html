@@ -16,13 +16,12 @@
   window.hlx = window.hlx || {};
   window.hlx.rum = window.hlx.rum || {};
   window.hlx.rum.isRUMEnabled = true;
-  window.hlx.rum.sampleRate = 1; 
+  window.hlx.rum.sampleRate = 1;
   window.hlx.rum.deployment = 'prod';
 
-  // Load the RUM client
   (function () {
     const script = document.createElement('script');
-    script.src = 'https://www.hlx.live/tools/rum/rum.js';
+    script.src = 'https://rum.hlx.page/rum.js';
     script.async = true;
     document.head.appendChild(script);
   })();

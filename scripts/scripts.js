@@ -110,20 +110,6 @@ function autolinkModals(element) {
   });
 }
 
-  window.hlx = window.hlx || {};
-  window.hlx.rum = window.hlx.rum || {};
-  window.hlx.rum.isRUMEnabled = true;
-  window.hlx.rum.sampleRate = 1;
-  window.hlx.rum.deployment = 'prod';
-
-  (function () {
-    const script = document.createElement('script');
-    script.src = 'https://rum.hlx.page/rum.js';
-    script.async = true;
-    document.head.appendChild(script);
-  })();
-
-
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
