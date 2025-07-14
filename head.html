@@ -12,37 +12,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>
-  window.hlx = window.hlx || {};
-  window.hlx.rum = {
-    weight: 1,
-    isSelected: true,
-    isRUMEnabled: true,
-    // deployment: 'prod',
-  };
-
-  (function () {
-    const script = document.createElement('script');
-    script.src = 'https://rum.hlx.page/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js';
-    script.async = true;
-    script.onload = () => {
-      console.log('✅ RUM script loaded');
-
-      // ✅ Wait a bit to ensure sampleRUM is available
-      setTimeout(() => {
-        if (window.hlx?.rum?.sampleRUM) {
-          console.log('📡 Sending beacon...');
-          window.hlx.rum.sampleRUM('chatgpt-final-check', { log: true });
-        } else {
-          console.warn('❌ sampleRUM not ready yet');
-        }
-      }, 1000); // delay to ensure it loads
-    };
-    document.head.appendChild(script);
-  })
-  ();
-
-</script>
+<script defer type="text/javascript"
+    src="https://rum.hlx.page/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js">
+  </script>
 
 
 
