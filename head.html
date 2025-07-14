@@ -15,9 +15,15 @@
 <script>
   window.hlx = window.hlx || {};
   window.hlx.rum = window.hlx.rum || {};
-  window.hlx.rum.config = {
-    weight: 1,       // Send data from all users
-    observed: true,  // Enable CWV observation
-  };
+  window.hlx.rum.isRUMEnabled = true;
+  window.hlx.rum.sampleRate = 1; 
+  window.hlx.rum.deployment = 'prod';
+
+  // Load the RUM client
+  (function () {
+    const script = document.createElement('script');
+    script.src = 'https://www.hlx.live/tools/rum/rum.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
 </script>
-<script defer type="text/javascript" src="https://rum.hlx.page/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js"></script>
