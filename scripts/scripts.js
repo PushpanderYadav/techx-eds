@@ -13,8 +13,6 @@ import {
   loadCSS,
   sampleRUM
 } from "./aem.js";
-
-sampleRUM('click', { log: true });
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
@@ -130,6 +128,9 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+  sampleRUM("lazy");
+  sampleRUM.observe(main.querySelectorAll("div[data-block-name]"));
+  sampleRUM.observe(main.querySelectorAll("picture > img"));
 }
 
 /**
