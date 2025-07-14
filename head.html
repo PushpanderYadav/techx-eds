@@ -16,8 +16,8 @@
   window.hlx = window.hlx || {};
   window.hlx.rum = window.hlx.rum || {};
   window.hlx.rum.isRUMEnabled = true;
-  window.hlx.rum.sampleRate = 1;
-  window.hlx.rum.deployment = 'prod';
+  window.hlx.rum.weight = 1; // ✅ FORCE 100% sampling
+  window.hlx.rum.deployment = 'prod'; // or 'stage' if not live yet
 
   (function () {
     const script = document.createElement('script');
@@ -26,3 +26,4 @@
     document.head.appendChild(script);
   })();
 </script>
+
