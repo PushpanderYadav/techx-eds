@@ -14,10 +14,12 @@
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
   window.hlx = window.hlx || {};
-  window.hlx.rum = window.hlx.rum || {};
-  window.hlx.rum.isRUMEnabled = true;
-  window.hlx.rum.weight = 1; // ✅ FORCE 100% sampling
-  window.hlx.rum.deployment = 'prod'; // or 'stage' if not live yet
+  window.hlx.rum = {
+    weight: 1,               // ✅ Set this before loading rum.js
+    isSelected:true,
+    isRUMEnabled: true,
+    deployment: 'prod',
+  };
 
   (function () {
     const script = document.createElement('script');
@@ -26,4 +28,5 @@
     document.head.appendChild(script);
   })();
 </script>
+
 
