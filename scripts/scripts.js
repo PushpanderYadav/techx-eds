@@ -11,8 +11,10 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  sampleRUM
 } from "./aem.js";
 
+sampleRUM('click', { log: true });
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
