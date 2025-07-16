@@ -29,16 +29,11 @@
       "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:400px; height: calc(100vh - 60px)"
     },
     {
-  "project": "techx-eds",
-  "plugins": [
-    {
       "id": "hello-plugin",
       "title": "Hello",
       "environments": ["edit"],
       "url": "https://main--aem-boilerplate--adobe.hlx.page/tools/sidekick/hello.html",
       "includePaths": ["**"]
     }
-  ]
-}
   ]
 }
