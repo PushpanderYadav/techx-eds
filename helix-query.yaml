@@ -20,6 +20,9 @@ indices:
         select: none
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+      content:
+        select: body
+        value: text(el)
       robots:
         select: head > meta[name="robots"]
         value: |
