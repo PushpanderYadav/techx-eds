@@ -1,19 +1,22 @@
 body.modal-open {
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   
   .modal dialog::backdrop {
     background-color: rgb(19 19 19 / 75%);
+    margin-top: 4%;
   }
   
   .modal dialog {
     overscroll-behavior: none;
     overflow-y: hidden;
     width: calc(100vw - 48px);
-    max-width: 900px;
-    max-height: calc(100dvh - (2 * var(--header-height)));
+    max-width: 555px;
+    /* max-height: calc(100dvh - (2 * var(--header-height))); */
     padding: 0;
     border: 1px solid var(--dark-color);
+    border-radius: 10px;
+    box-sizing: border-box;
   }
   
   .modal dialog .modal-content {
@@ -21,21 +24,38 @@ body.modal-open {
     overflow-y: auto;
     overscroll-behavior: none;
     width: 100%;
-    max-height: calc(100dvh - (2 * var(--header-height)) - 48px);
+    /* max-height: calc(100dvh - (2 * var(--header-height)) - 48px); */
     padding: 24px;
     padding-top: 0;
-    margin-top: 44px;
+    margin-top: 25px;
   }
   
+  .modal-content .section.intro-modal-container.hide-intro{
+    display: none;
+  }
+  .modal-content .section.apply-now-modal-container{
+    display: none;
+  }
+
+  .modal-content .section.apply-now-modal-container.show-apply-modal{
+    display: block;
+  }
   @media (width >= 900px) {
     .modal dialog {
       width: calc(100vw - 64px);
     }
     
     .modal dialog .modal-content {
-      max-height: calc(100dvh - (2 * var(--header-height)) - 64px);
-      padding: 32px;
+      /* max-height: calc(100dvh - (2 * var(--header-height)) - 64px); */
+      padding: 20px;
       padding-top: 0;
+    }
+  }
+
+  @media (width <= 768px) {
+      .modal dialog {
+      width: calc(100vw - 3vw);
+      max-width: 382px;
     }
   }
   

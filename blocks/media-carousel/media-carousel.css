@@ -43,6 +43,7 @@
   margin:0
 }
 
+
 @media(max-width:767px) {
 .media-carousel__video-wrapper .v2-video-playback-button,
 .media-carousel__video-wrapper .v2-video-mute-controls {

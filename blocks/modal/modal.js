@@ -3,12 +3,6 @@ import {
   buildBlock, decorateBlock, loadBlock, loadCSS,
 } from '../../scripts/aem.js';
 
-/*
-  This is not a traditional block, so there is no decorate function.
-  Instead, links to a /modals/ path are automatically transformed into a modal.
-  Other blocks can also use the createModal() and openModal() functions.
-*/
-
 export async function createModal(contentNodes) {
   await loadCSS(`${window.hlx.codeBasePath}/blocks/modal/modal.css`);
   const dialog = document.createElement('dialog');
@@ -17,13 +11,13 @@ export async function createModal(contentNodes) {
   dialogContent.append(...contentNodes);
   dialog.append(dialogContent);
 
-  const closeButton = document.createElement('button');
-  closeButton.classList.add('close-button');
-  closeButton.setAttribute('aria-label', 'Close');
-  closeButton.type = 'button';
-  closeButton.innerHTML = '<span class="icon icon-close"></span>';
-  closeButton.addEventListener('click', () => dialog.close());
-  dialog.prepend(closeButton);
+  // const closeButton = document.createElement('button');
+  // closeButton.classList.add('close-button');
+  // closeButton.setAttribute('aria-label', 'Close');
+  // closeButton.type = 'button';
+  // closeButton.innerHTML = '<span class="icon icon-close"></span>';
+  // closeButton.addEventListener('click', () => dialog.close());
+  // dialog.prepend(closeButton);
 
   const block = buildBlock('modal', '');
   document.querySelector('main').append(block);
@@ -32,13 +26,13 @@ export async function createModal(contentNodes) {
 
   // close on click outside the dialog
   dialog.addEventListener('click', (e) => {
-    const {
-      left, right, top, bottom,
-    } = dialog.getBoundingClientRect();
-    const { clientX, clientY } = e;
-    if (clientX < left || clientX > right || clientY < top || clientY > bottom) {
-      dialog.close();
-    }
+    // const {
+    //   left, right, top, bottom,
+    // } = dialog.getBoundingClientRect();
+    // const { clientX, clientY } = e;
+    // if (clientX < left || clientX > right || clientY < top || clientY > bottom) {
+    //   dialog.close();
+    // }}
   });
 
   dialog.addEventListener('close', () => {

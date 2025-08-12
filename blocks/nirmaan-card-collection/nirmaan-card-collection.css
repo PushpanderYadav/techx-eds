@@ -1,0 +1,327 @@
+.nirmaan-card-collection__top-filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+@media (width >=400px) and (width <=767px) {
+    .nirmaan-card-collection__top-filter-container {
+        flex-direction: column;
+    }
+}
+
+.nirmaan-card-collection__heading-container h2 {
+    font-weight: 700;
+    font-size: 2.1rem;
+    line-height: 100%;
+    color: #3B3B3B;
+    margin: unset;
+
+}
+
+.nirmaan-card-collection__dropdown-container {
+    position: relative;
+    /* width: 20%; */
+}
+
+.nirmaan-card-collection__drop-search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (width >=400px) and (width <=767px) {
+    .nirmaan-card-collection__drop-search-container {
+        flex-direction: column;
+    }
+}
+
+.nirmaan-card-collection__search-container {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    /* overflow: hidden; */
+    border: 1px solid #712975;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 0.2rem;
+    background: rgb(183, 177, 177);
+    min-width: 420px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.nirmaan-card-collection__search-container .nirmaan-card-collection__search-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-self: center;
+    vertical-align: middle;
+}
+
+.nirmaan-card-collection__search-container input {
+    flex: 1;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    background: unset;
+    outline: none;
+    border: none;
+}
+
+
+
+.nirmaan-card-collection__search-container button {
+    border: none;
+    background: #83C341;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 4px;
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.nirmaan-card-collection__search-result {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: 55px;
+    right: 0;
+    left: 0;
+    display: none;
+    background: #ffffff;
+    box-shadow: 0px 3px 10px 0px #00000033;
+    border-radius: 4px;
+    z-index: 9999;
+}
+
+.nirmaan-card-collection__search-result .item-container {
+    height: 160px;
+    width: 100%;
+    overflow-y: auto;
+}
+.nirmaan-card-collection__search-result .item-container.hide-list{
+    display: none;
+} 
+.nirmaan-card-collection__search-result .no-result-conainer{
+    display: none;
+}
+.nirmaan-card-collection__search-result .no-result-conainer.show-no-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.nirmaan-card-collection__search-result .item-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.nirmaan-card-collection__search-result .item-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.nirmaan-card-collection__search-result .item-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.nirmaan-card-collection__search-result .no-result-container {
+    display: none;
+}
+
+.nirmaan-card-collection__search-result .no-result-container.show-no-result {
+    display: block;
+}
+
+.nirmaan-card-collection__search-result.show-search-box {
+    display: block;
+}
+
+.nirmaan-card-collection__search-result .item-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+    border-bottom: 1px solid #DEDEDE;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 0px;
+}
+
+.item-div .item-label {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    color: #3B3B3B;
+}
+
+.item-div .view-label {
+    font-family: Helvetica;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 100%;
+    color: #83C341;
+
+}
+
+.nirmaan-card-collection__dropdown-container .nirmaan-card-collection__custom-select {
+    display: none;
+}
+
+.nirmaan-card-collection__custom-select .nirmaan-card-collection__custom-option.select {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nirmaan-card-collection__custom-select .nirmaan-card-collection__custom-option:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nirmaan-card-collection__dropdown-container .nirmaan-card-collection__select-category {
+    position: relative;
+    padding: 15px;
+    width: 240px;
+    background: #83C341;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.nirmaan-card-collection__dropdown-container .nirmaan-card-collection__select-category::after {
+    content: "^";
+    display: inline-block;
+    width: 9px;
+    height: 6px;
+    background-image: url(/icons/dropdown.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 8px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1);
+    transform: rotate(180deg);
+}
+
+.nirmaan-card-collection__dropdown-container .nirmaan-card-collection__select-category.arrow-turn::after {
+    transform: unset;
+}
+
+.nirmaan-card-collection__dropdown-container .nirmaan-card-collection__custom-select.show {
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    z-index: 99;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    cursor: pointer;
+}
+
+.nirmaan-card-collection__dropdown-container .nirmaan-card-collection__custom-select.show .nirmaan-card-collection__custom-option {
+    color: #3b3b3b;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16.42px;
+    text-align: center;
+}
+
+.nirmaan-card-collection__dropdown-container .nirmaan-card-collection__custom-select.show div:not(:last-child) {
+    border-bottom: 1px solid #ebebeb;
+}
+
+.section.nirmaan-service-card-container {
+    display: none;
+}
+
+.section.nirmaan-service-card-container.selectSection {
+    display: block;
+}
+
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    /* Centers everything */
+    margin: 20px 0;
+}
+
+@media (width >=400px) and (width <=767px) {
+    .pagination-container {
+        display: none;
+    }
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    /* Space between all elements */
+}
+
+.pagination-controls .previous-btn {
+    background-image: url(/icons/arrowRight.svg) !important;
+    background: #712975;
+    transform: rotate(180deg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 16px 16px;
+    border-radius: 4px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.pagination-controls .next-button {
+    background-image: url(/icons/arrowRight.svg) !important;
+    background: #712975;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 16px 16px;
+    border-radius: 4px;
+    padding: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.disabled-button {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-controls span.active {
+    color: rgba(140, 177, 51, 1);
+    text-decoration: underline;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1%;
+    text-align: center;
+    cursor: pointer;
+    line-height: 60px;
+
+}
+
+.pagination-controls span {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1%;
+    text-align: center;
+    cursor: pointer;
+    line-height: 60px;
+
+}

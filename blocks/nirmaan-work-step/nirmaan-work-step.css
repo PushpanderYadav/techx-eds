@@ -1,0 +1,227 @@
+.nirmaan-work-step-wrapper {
+    max-width: unset !important;
+}
+
+.nirmaan-work-step {
+    position: relative;
+    filter: drop-shadow(0 0 10px #0000001A);
+}
+
+
+.nirmaan-work-step__cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+    .nirmaan-work-step__cardContainer {
+        gap: 10px;
+        margin-top: 5px;
+    }
+}
+
+.nirmaan-work-step__card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 666px;
+    height: 240px;
+    box-sizing: border-box;
+
+}
+
+@media(min-width:1199px) and (max-width:1440px){
+    .nirmaan-work-step__card {
+        width: 593px;
+        height: 213px;
+    }
+    .nirmaan-work-step__cardContainer {
+        row-gap: 10px;
+    }
+}
+
+.nirmaan-work-step__card:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url('/icons/box1.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+    background-color: transparent;
+
+}
+
+
+.nirmaan-work-step__card:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 25px;
+    background-image: url('/icons/box2.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+    background-color: transparent;
+}
+
+.nirmaan-work-step__card:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url('/icons/box3.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+    background-color: transparent;
+}
+
+.nirmaan-work-step__card:nth-child(4) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 25px;
+    background-image: url('/icons/box4.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+    background-color: transparent;
+}
+
+.nirmaan-work-step_imageContainer {
+    width: 133px;
+    height: 133px;
+    /* flex: 0 0 60px; */
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 767px) {
+    .nirmaan-work-step_imageContainer {
+        width: 33px;
+        height: 33px;
+    }
+
+    .nirmaan-work-step__card:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-image: url('/icons/mobile-first-column.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-origin: padding-box;
+        background-clip: border-box;
+        background-attachment: scroll;
+        background-color: transparent;
+
+    }
+}
+
+.nirmaan-work-step_imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nirmaan-work-step_contentContainer {
+    flex: 1;
+}
+
+
+@media(min-width: 1199px) {
+    .nirmaan-work-step_contentContainer {
+        flex: unset;
+        width: 250px;
+    }
+}
+
+.nirmaan-work-step_contentContainer h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 100%;
+    margin: unset;
+    margin-top: 5px;
+    color: #3b3b3b;
+}
+
+@media(max-width:767px) {
+    .nirmaan-work-step_contentContainer h2 {
+        font-size: 12px;
+    }
+}
+
+.nirmaan-work-step_contentContainer p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+
+}
+
+@media(max-width:767px) {
+    .nirmaan-work-step_contentContainer p {
+        font-size: 10px;
+    }
+}
+
+.nirmaan-work-step_circlecard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    background: #712975;
+    box-sizing: border-box;
+    width: 270px;
+    height: 270px;
+}
+@media(min-width:1199px) and (max-width:1440px){
+    .nirmaan-work-step_circlecard {
+        width: 267px;
+        height: 267px;
+    }
+}
+
+@media(max-width:767px) {
+    .nirmaan-work-step_circlecard {
+        width: 90px;
+        height: 90px;
+        padding: unset;
+    }
+}
+
+.nirmaan-work-step_circlecard div h2 {
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 100%;
+    color: #fff;
+}
+
+@media(max-width:767px) {
+    .nirmaan-work-step_circlecard div h2 {
+        font-size: 14px;
+    }
+}

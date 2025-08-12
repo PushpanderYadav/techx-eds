@@ -1,0 +1,37 @@
+.common-fragment.fragment-container{
+    display: none;
+}
+.common-fragment.fragment-container.show-section{
+    display: block;
+}
+
+.common-tab-conainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    margin: 1rem 0 20px 0;
+    width: 100%;
+    background-color: #F4F4F4;
+    border: none;
+    width: fit-content;
+    border-radius: 4px;
+    margin: 0 auto 40px;
+}
+.common-tab-conainer .common-tab-button.active-tab-button {
+    background-color: #3CB8FF;
+    color: #FFFFFF;
+}
+.common-tab-conainer .common-tab-button {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+}

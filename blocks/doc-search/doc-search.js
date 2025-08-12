@@ -216,7 +216,7 @@ function buildResult(match, terms, isHomepage) {
     const image = createOptimizedPicture(match.image, null, false, [
       { width: "20" },
     ]);
-    result.append(image, title, desc);
+    result.append(title, desc);
     const li = createTag("li", { class: "doc-search-result" });
     li.append(result);
     return li;
@@ -284,7 +284,7 @@ function getIdFromSectionMetadata(section) {
 
 function createSearchResultObject(doc, terms, source) {
   const id = getIdFromSectionMetadata(doc);
-  console.log(id);
+  console.log(doc);
   return {
     title: doc.querySelector("h3")?.textContent || "",
     description: doc.querySelector("p")?.textContent || "",
@@ -343,6 +343,7 @@ function findDoc(query, docs = [], findMultiple = false) {
         )
       ) {
         perfectMatches.add(createSearchResultObject(doc, terms, "faq"));
+        console.log(perfectMatches);
       }
     });
     // eject if we have 3 results at least to show
@@ -413,7 +414,7 @@ function searchQuery(search, docs, results, isHomepage) {
       results.querySelectorAll(".article-card").forEach((r) => r.remove());
     }
 
-    // search for matching document
+    // search for matching documentinn
     const { match, terms } = findDoc(search, docs, !isHomepage);
     if (match) {
       const uniqueMatches = Array.isArray(match)
