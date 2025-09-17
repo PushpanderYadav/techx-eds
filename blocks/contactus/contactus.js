@@ -289,7 +289,9 @@ async function formFunctionality(block) {
   const webURLInput = block.querySelector('#company-website');
   const parentSection = block.parentElement.parentElement;
   const dataSet = parentSection.dataset;
-  const { formsheeturl, submitpopup, apierrormessage } = dataSet;
+  const {
+    formsheeturl, submitpopup, apierrormessage,
+  } = dataSet;
   nameInput.addEventListener('input', (e) => {
     let value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
     value = value.replace(/\b\w/g, (char) => char.toUpperCase());
@@ -366,9 +368,8 @@ async function formFunctionality(block) {
         showPopup(submitpopup); // success message
       } catch (error) {
         console.error('Error!', error);
-
         // Show error popup
-        showPopup(apierrormessage); // error message
+        showPopup(apierrormessage);
       } finally {
         submitBtn.disabled = false;
       }
